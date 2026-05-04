@@ -36,12 +36,22 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 
 .header {
   background: var(--ink); padding: 20px 36px 18px;
-  display: flex; align-items: baseline; gap: 16px;
+  display: flex; align-items: center; gap: 16px;
   position: sticky; top: 0; z-index: 100;
 }
-.header h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 400; color: var(--cream); white-space: nowrap; }
+.header h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 400; color: #9aa87a; white-space: nowrap; }
 .header h1 em { font-style: normal; color: #9aa87a; }
-.hcounts { font-size: 11px; color: #6a7a68; letter-spacing: 0.04em; text-transform: uppercase; }
+.hcounts { font-size: 11px; color: #6a7a68; letter-spacing: 0.04em; text-transform: uppercase; flex: 1; }
+.update-btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 11px; font-weight: 500;
+  padding: 5px 12px; border-radius: 99px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7);
+  cursor: pointer; white-space: nowrap; transition: all 0.15s;
+  letter-spacing: 0.02em;
+}
+.update-btn:hover { background: rgba(255,255,255,0.16); color: white; border-color: rgba(255,255,255,0.35); }
 
 .toolbar {
   background: var(--white); border-bottom: 1px solid var(--border);
@@ -82,6 +92,15 @@ select, .ni {
 }
 .chip:hover { border-color: #5D6A9E; color: #323e72; }
 .chip.on { background: #323e72; color: white; border-color: #323e72; }
+.sub-toggle-btn {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.04em;
+  padding: 3px 9px; border-radius: 99px;
+  border: 1px solid var(--border-strong);
+  background: var(--cream); color: var(--ink-light);
+  cursor: pointer; transition: all 0.15s; white-space: nowrap;
+}
+.sub-toggle-btn:hover { border-color: #5D6A9E; color: #323e72; }
 
 .vd { width: 1px; height: 22px; background: var(--border); flex-shrink: 0; }
 .cscroll { display: flex; gap: 5px; flex-wrap: wrap; }
@@ -151,8 +170,9 @@ select, .ni {
 <body>
 
 <div class="header">
-  <h1>California Nature Tracker — Bay Area</h1>
-  <span class="hcounts" id="hc">Load a CSV to begin</span>
+  <h1>California Nature Tracker</h1>
+  <span class="hcounts" id="hc">Loading…</span>
+  <button class="update-btn" onclick="document.getElementById('fi').click()" title="Replace with updated CSV">&#8593; Update CSV</button>
 </div>
 
 <div class="toolbar" id="toolbar" style="display:none">
@@ -183,9 +203,17 @@ select, .ni {
     <span class="fl" style="margin-right:4px">Category</span>
     <div class="cscroll" id="cat-chips"></div>
   </div>
-  <div class="trow" id="subrow" style="display:none">
-    <span class="fl" style="margin-right:4px">Subcategory</span>
-    <div class="cscroll" id="sub-chips"></div>
+  <div id="subrow" style="display:none">
+    <div class="trow" style="gap:6px;">
+      <span class="fl" style="margin-right:2px">Subcategory</span>
+      <button class="sub-toggle-btn" id="sub-toggle-btn" onclick="toggleSubSection()">show &#8964;</button>
+      <span id="sub-summary" style="font-size:10px; color:var(--ink-light); font-style:italic;"></span>
+    </div>
+    <div id="sub-expanded" style="display:none; border-top:1px solid var(--border);">
+      <div class="trow" style="padding-top:8px; padding-bottom:8px;">
+        <div class="cscroll" id="sub-chips"></div>
+      </div>
+    </div>
   </div>
   <div class="trow">
     <span class="fl" style="margin-right:4px">Bay Peak Month</span>
@@ -213,13 +241,12 @@ select, .ni {
   <span id="uc" style="color:#854F0B"></span>
 </div>
 
-<div id="dc">
-  <div class="dz" id="dz" onclick="document.getElementById('fi').click()">
+<div id="dc" style="display:none">
+  <div class="dz" id="dz">
     <svg viewBox="0 0 48 48"><path d="M24 6v24M14 16l10-10 10 10M8 34v6a2 2 0 002 2h28a2 2 0 002-2v-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-    <h2>Drop your CSV here</h2>
-    <p>Export your Google Sheet as <strong>.csv</strong> and drop it here, or click to browse.<br>
-    Columns: <strong>Category, Subcategory, Name, Scientific name, Life list date, CA obsv, Bay obsv</strong><br>
-    Optional: Bay peak month, Notes</p>
+    <h2>Could not load data.csv</h2>
+    <p>Make sure <strong>data.csv</strong> is in the same folder as this HTML file.<br>
+    Or use the <strong>Update CSV</strong> button in the top right to load a file manually.</p>
   </div>
   <input type="file" id="fi" accept=".csv" onchange="handleFile(this.files[0])">
 </div>
@@ -237,6 +264,7 @@ var CAT_CLASS = {
   'butterflies':        'cat-butterflies',
   'frogs & toads':      'cat-frogs-toads',
   'flowering plants':   'cat-flowering-plants',
+  'flowers':            'cat-flowering-plants',
   'sea stars':          'cat-sea-stars',
   'snakes':             'cat-snakes',
   'newts & salamanders':'cat-newts-salamanders',
@@ -257,6 +285,11 @@ var activeCats = ['__a__'];
 var activeSubs = ['__a__'];
 var obsFilter = 'all';
 var activeMonths = [0];
+
+function normCat(cat) {
+  if (cat.toLowerCase() === 'flowering plants') return 'Flowers';
+  return cat;
+}
 
 function parseCSV(txt) {
   var lines = txt.split(/\r?\n/);
@@ -294,7 +327,7 @@ function parseCSV(txt) {
     var ca = parseInt((iCA >= 0 ? c[iCA] : '0' || '0').replace(/,/g,'')) || 0;
     var peak = parseInt((iP >= 0 ? c[iP] : '' || '').trim()) || 0;
     rows.push({
-      cat:   iCat >= 0 ? (c[iCat] || '').trim() : '',
+      cat:   normCat(iCat >= 0 ? (c[iCat] || '').trim() : ''),
       sub:   iSub >= 0 ? (c[iSub] || '').trim() : '',
       name:  name,
       sci:   iSci >= 0 ? (c[iSci] || '').trim() : '',
@@ -321,26 +354,42 @@ function splitRow(line) {
   return out;
 }
 
-var dzEl = document.getElementById('dz');
-dzEl.addEventListener('dragover', function(e){ e.preventDefault(); dzEl.classList.add('over'); });
-dzEl.addEventListener('dragleave', function(){ dzEl.classList.remove('over'); });
-dzEl.addEventListener('drop', function(e){ e.preventDefault(); dzEl.classList.remove('over'); handleFile(e.dataTransfer.files[0]); });
+function loadData(csvText) {
+  allData = parseCSV(csvText);
+  if (!allData.length) { alert('No data found. Check column headers.'); return; }
+  buildCats();
+  document.getElementById('dc').style.display = 'none';
+  document.getElementById('toolbar').style.display = 'flex';
+  document.getElementById('rbar').style.display = 'flex';
+  document.getElementById('gw').style.display = 'block';
+  render();
+}
 
 function handleFile(file) {
   if (!file) return;
   var reader = new FileReader();
-  reader.onload = function(e) {
-    allData = parseCSV(e.target.result);
-    if (!allData.length) { alert('No data found. Check column headers.'); return; }
-    buildCats();
-    document.getElementById('dc').style.display = 'none';
-    document.getElementById('toolbar').style.display = 'flex';
-    document.getElementById('rbar').style.display = 'flex';
-    document.getElementById('gw').style.display = 'block';
-    render();
-  };
+  reader.onload = function(e) { loadData(e.target.result); };
   reader.readAsText(file);
 }
+
+// Auto-load data.csv from the same folder on startup
+(function() {
+  var req = new XMLHttpRequest();
+  req.open('GET', 'data.csv', true);
+  req.onload = function() {
+    if (req.status === 200 || req.status === 0) {
+      loadData(req.responseText);
+    } else {
+      document.getElementById('dc').style.display = 'block';
+      document.getElementById('hc').textContent = 'No data loaded';
+    }
+  };
+  req.onerror = function() {
+    document.getElementById('dc').style.display = 'block';
+    document.getElementById('hc').textContent = 'No data loaded';
+  };
+  req.send();
+})();
 
 function uniqueSorted(arr) {
   var seen = {}, out = [];
@@ -384,6 +433,7 @@ function toggleCat(btn) {
   }
   activeSubs = ['__a__'];
   buildSubs();
+  updateSubSummary();
   render();
 }
 
@@ -399,6 +449,28 @@ function buildSubs() {
     html += '<button class="chip" data-g="' + sl[i] + '" onclick="toggleSub(this)">' + sl[i] + '</button>';
   }
   w.innerHTML = html;
+}
+
+function toggleSubSection() {
+  var expanded = document.getElementById('sub-expanded');
+  var btn = document.getElementById('sub-toggle-btn');
+  if (expanded.style.display === 'none') {
+    expanded.style.display = 'block';
+    btn.innerHTML = 'hide &#8963;';
+  } else {
+    expanded.style.display = 'none';
+    btn.innerHTML = 'show &#8964;';
+  }
+}
+
+function updateSubSummary() {
+  var summary = document.getElementById('sub-summary');
+  if (!summary) return;
+  if (activeSubs.indexOf('__a__') >= 0) {
+    summary.textContent = '';
+  } else {
+    summary.textContent = activeSubs.join(', ');
+  }
 }
 
 function toggleSub(btn) {
@@ -420,6 +492,7 @@ function toggleSub(btn) {
     }
     if (!activeSubs.length) { activeSubs = ['__a__']; allChip.classList.add('on'); }
   }
+  updateSubSummary();
   render();
 }
 
@@ -497,9 +570,25 @@ function render() {
   grid.innerHTML = html;
 }
 
+function tryNextExt(img, slug) {
+  var exts = ['png', 'webp'];
+  var src = img.src;
+  for (var i = 0; i < exts.length; i++) {
+    if (src.indexOf('.' + exts[i]) < 0 && (i === 0 || src.indexOf('.' + exts[i-1]) >= 0)) {
+      img.onerror = i < exts.length - 1
+        ? function(){ tryNextExt(img, slug); }
+        : function(){ img.style.display='none'; img.nextElementSibling.style.display='flex'; };
+      img.src = 'photos/' + slug + '.' + exts[i];
+      return;
+    }
+  }
+  img.style.display = 'none';
+  img.nextElementSibling.style.display = 'flex';
+}
+
 function makeTile(d) {
   var catcl   = getCatClass(d.cat);
-  var slug    = d.name.toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/, '');
+  var slug    = d.name.toLowerCase().replace(/['\']/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
   var ini     = initials(d.name);
   var catline = d.sub ? d.cat + ': ' + d.sub : d.cat;
   var pk      = d.peak ? '<span class="pp">' + MONTHS[d.peak] + '</span>' : '';
@@ -512,7 +601,7 @@ function makeTile(d) {
     + '<div class="th">'
     +   '<div class="tp">'
     +     '<img src="photos/' + slug + '.jpg"'
-    +       ' onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\'"'
+    +       ' onerror="tryNextExt(this,\'' + slug + '\')"'
     +       ' style="width:100%;height:100%;object-fit:cover;display:block">'
     +     '<div class="tpp" style="display:none">' + ini + '</div>'
     +   '</div>'
