@@ -23,6 +23,7 @@
 .cat-frogs-toads       { --c1:#6E8F5E; --c2:#A7C39A; --c3:#D8EDD0; --cd:#3e5e30; }
 .cat-flowering-plants  { --c1:#A16B7A; --c2:#CDA2AD; --c3:#F0DDE2; --cd:#6a3a48; }
 .cat-sea-stars         { --c1:#C46D48; --c2:#E29A7A; --c3:#F5DDD0; --cd:#7a3e20; }
+.cat-birds             { --c1:#C46D48; --c2:#E29A7A; --c3:#F5DDD0; --cd:#7a3e20; }
 .cat-snakes            { --c1:#C2A98B; --c2:#E1D3BB; --c3:#F2EBD8; --cd:#6a5840; }
 .cat-newts-salamanders { --c1:#4F7F72; --c2:#9EC9BF; --c3:#D0EDE8; --cd:#264f45; }
 .cat-moths             { --c1:#64686C; --c2:#B0B3B6; --c3:#E2E4E6; --cd:#36393c; }
@@ -72,7 +73,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
   border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
   background: var(--cream); color: var(--ink); outline: none;
 }
-.sw input:focus { border-color: #5D6A9E; }
+.sw input:focus { border-color: #A8947E; }
 
 .fl { font-size: 10px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.07em; color: var(--ink-light); white-space: nowrap; }
 
@@ -90,8 +91,8 @@ select, .ni {
   background: var(--cream); color: var(--ink-mid);
   cursor: pointer; transition: all 0.15s; white-space: nowrap;
 }
-.chip:hover { border-color: #5D6A9E; color: #323e72; }
-.chip.on { background: #323e72; color: white; border-color: #323e72; }
+.chip:hover { border-color: #A8947E; color: #8a7060; }
+.chip.on { background: #A8947E; color: white; border-color: #A8947E; }
 .sub-toggle-btn {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 10px; font-weight: 500; letter-spacing: 0.04em;
@@ -100,7 +101,7 @@ select, .ni {
   background: var(--cream); color: var(--ink-light);
   cursor: pointer; transition: all 0.15s; white-space: nowrap;
 }
-.sub-toggle-btn:hover { border-color: #5D6A9E; color: #323e72; }
+.sub-toggle-btn:hover { border-color: #A8947E; color: #8a7060; }
 
 .vd { width: 1px; height: 22px; background: var(--border); flex-shrink: 0; }
 .cscroll { display: flex; gap: 5px; flex-wrap: wrap; }
@@ -117,7 +118,7 @@ select, .ni {
   border-radius: var(--radius); padding: 60px 40px; text-align: center;
   cursor: pointer; transition: all 0.2s; background: var(--white);
 }
-.dz:hover, .dz.over { border-color: #5D6A9E; background: #f0f2f8; }
+.dz:hover, .dz.over { border-color: #A8947E; background: #f0f2f8; }
 .dz svg { width: 34px; height: 34px; stroke: #5D6A9E; fill: none; stroke-width: 1.5; margin-bottom: 14px; }
 .dz h2 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: 20px; margin-bottom: 8px; }
 .dz p { font-size: 13px; color: var(--ink-light); line-height: 1.7; }
@@ -207,7 +208,6 @@ select, .ni {
     <div class="trow" style="gap:6px;">
       <span class="fl" style="margin-right:2px">Subcategory</span>
       <button class="sub-toggle-btn" id="sub-toggle-btn" onclick="toggleSubSection()">show &#8964;</button>
-      <span id="sub-summary" style="font-size:10px; color:var(--ink-light); font-style:italic;"></span>
     </div>
     <div id="sub-expanded" style="display:none; border-top:1px solid var(--border);">
       <div class="trow" style="padding-top:8px; padding-bottom:8px;">
@@ -266,6 +266,7 @@ var CAT_CLASS = {
   'flowering plants':   'cat-flowering-plants',
   'flowers':            'cat-flowering-plants',
   'sea stars':          'cat-sea-stars',
+  'birds':              'cat-birds',
   'snakes':             'cat-snakes',
   'newts & salamanders':'cat-newts-salamanders',
   'moths':              'cat-moths',
@@ -441,6 +442,13 @@ function buildSubs() {
   var rel = activeCats.indexOf('__a__') >= 0 ? allData : allData.filter(function(d){ return activeCats.indexOf(d.cat) >= 0; });
   var sl = uniqueSorted(rel.map(function(d){ return d.sub; }));
   var row = document.getElementById('subrow');
+  // Always clear summary and collapse panel when rebuilding
+  var summary = document.getElementById('sub-summary');
+  if (summary) summary.textContent = '';
+  var expanded = document.getElementById('sub-expanded');
+  var btn = document.getElementById('sub-toggle-btn');
+  if (expanded) expanded.style.display = 'none';
+  if (btn) btn.innerHTML = 'show &#8964;';
   if (!sl.length) { row.style.display = 'none'; return; }
   row.style.display = 'flex';
   var w = document.getElementById('sub-chips');
