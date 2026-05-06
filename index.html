@@ -127,14 +127,35 @@ select, .ni {
 
 .gw { padding: 18px 36px 60px; }
 .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 12px; }
+.grid > .tile-wrap { height: 130px; }
+
+/* card flip wrapper */
+.tile-wrap {
+  perspective: 900px;
+  cursor: pointer;
+}
+.tile-wrap:hover .tile-inner { box-shadow: var(--shadow-hover); }
+.tile-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.45s cubic-bezier(0.4,0,0.2,1), box-shadow 0.2s;
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+}
+.tile-wrap.flipped .tile-inner { transform: rotateY(180deg); }
 
 .tile {
-  background: var(--white); border: 1px solid var(--border);
+  position: absolute; width: 100%; height: 100%;
+  border: 1px solid var(--border);
   border-radius: var(--radius); overflow: hidden;
-  box-shadow: var(--shadow); transition: box-shadow 0.2s, transform 0.15s;
-  position: relative; display: flex; flex-direction: column;
+  display: flex; flex-direction: column;
+  backface-visibility: hidden; -webkit-backface-visibility: hidden;
+  background: var(--white);
 }
-.tile:hover { box-shadow: var(--shadow-hover); transform: translateY(-1px); }
+.tile-back {
+  transform: rotateY(180deg);
+  background: var(--c3);
+}
 
 .th { display: flex; align-items: stretch; background: var(--c2); position: relative; }
 
@@ -156,14 +177,22 @@ select, .ni {
 .ob-y { background: var(--c1); color: white; }
 .ob-n { background: rgba(255,255,255,0.55); border: 1.5px solid var(--c1); }
 
-.tb { padding: 0; display: flex; flex-direction: column; }
-.tb-row { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: var(--c3); flex-wrap: nowrap; min-width: 0; overflow: hidden; }
+.tb { padding: 0; display: flex; flex-direction: column; flex: 1; }
+.tb-row { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: var(--c3); flex-wrap: nowrap; min-width: 0; overflow: hidden; flex: 1; position: relative; }
 .pills { display: flex; gap: 5px; flex-wrap: nowrap; flex-shrink: 0; }
 .cp { font-size: 10px; padding: 2px 8px; border-radius: 99px; background: var(--c2); border: 1px solid rgba(0,0,0,0.10); white-space: nowrap; }
 .cp-label { color: var(--cd); font-weight: 400; opacity: 1; }
 .cp-num { color: var(--cd); font-weight: 400; opacity: 0.75; }
 .pp { font-size: 10px; padding: 2px 8px; border-radius: 99px; background: var(--c1); border: 1px solid rgba(0,0,0,0.10); color: white; white-space: nowrap; font-weight: 500; }
 .tnotes { font-size: 10.5px; font-style: italic; color: var(--cd); opacity: 0.8; text-align: right; flex: 1; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; margin-left: 4px; }
+.flip-arrow { position: absolute; bottom: 6px; right: 9px; font-size: 13px; line-height: 1; color: var(--c1); opacity: 0.4; user-select: none; }
+
+/* Side B */
+.tb-back-header { display: flex; align-items: center; gap: 6px; padding: 0 10px; height: 40px; flex-shrink: 0; background: var(--c2); border-bottom: 1px solid rgba(0,0,0,0.07); position: relative; }
+.tb-back-name { font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex-shrink: 1; max-width: 42%; }
+.tb-back-pills { display: flex; gap: 4px; flex-shrink: 0; }
+.tb-back-ob { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; flex-shrink: 0; margin-left: auto; }
+.tb-back-notes { padding: 9px 12px; flex: 1; font-size: 11px; line-height: 1.5; color: var(--cd); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
 
 .none-msg { grid-column: 1/-1; text-align: center; padding: 80px 20px; color: var(--ink-light); }
 .none-msg h3 { font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 400; font-style: italic; margin-bottom: 8px; color: var(--ink-mid); }
@@ -174,7 +203,6 @@ select, .ni {
 <div class="header">
   <h1>California Nature Tracker</h1>
   <span class="hcounts" id="hc">Loading…</span>
-  <a class="nav-btn" href="photo_prep.html">&#9881; Photo Prep</a>
   <button class="update-btn" onclick="document.getElementById('fi').click()" title="Replace with updated CSV">&#8593; Update CSV</button>
 </div>
 
@@ -598,41 +626,72 @@ function tryNextExt(img, slug) {
   img.nextElementSibling.style.display = 'flex';
 }
 
+function flipTile(el) {
+  el.classList.toggle('flipped');
+}
+
 function makeTile(d) {
   var catcl   = getCatClass(d.cat);
-  var slug    = d.name.toLowerCase().replace(/['\']/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
+  var slug    = d.name.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
   var ini     = initials(d.name);
   var catline = d.sub ? d.cat + ': ' + d.sub : d.cat;
   var pk      = d.peak ? '<span class="pp">' + MONTHS[d.peak] + '</span>' : '';
   var notes   = d.notes ? '<div class="tnotes">' + d.notes + '</div>' : '';
-  var badge   = d.seen
+  var arrow   = d.notes ? '<span class="flip-arrow">\u21bb</span>' : '';
+  var badgeA  = d.seen
     ? '<div class="ob ob-y" title="Observed ' + d.date + '">\u2713</div>'
     : '<div class="ob ob-n"></div>';
+  var badgeB  = d.seen
+    ? '<div class="tb-back-ob ob-y">\u2713</div>'
+    : '<div class="tb-back-ob ob-n"></div>';
 
-  return '<div class="tile ' + catcl + '">'
-    + '<div class="th">'
-    +   '<div class="tp">'
-    +     '<img src="photos/' + slug + '.jpg"'
-    +       ' onerror="tryNextExt(this,\'' + slug + '\')"'
-    +       ' style="width:100%;height:100%;object-fit:cover;display:block">'
-    +     '<div class="tpp" style="display:none">' + ini + '</div>'
+  var backName = d.name;
+  if (backName.length > 22) {
+    var parts = backName.split(' ');
+    if (parts.length > 1) backName = parts[0][0] + '. ' + parts.slice(1).join(' ');
+    if (backName.length > 22) backName = backName.substring(0, 20) + '\u2026';
+  }
+
+  return '<div class="tile-wrap ' + catcl + '" onclick="flipTile(this)">'
+    + '<div class="tile-inner">'
+    + '<div class="tile">'
+    +   '<div class="th">'
+    +     '<div class="tp">'
+    +       '<img src="photos/' + slug + '.jpg"'
+    +         ' onerror="tryNextExt(this,\'' + slug + '\')"'
+    +         ' style="width:100%;height:100%;object-fit:cover;display:block">'
+    +       '<div class="tpp" style="display:none">' + ini + '</div>'
+    +     '</div>'
+    +     '<div class="thi">'
+    +       '<div class="tcl">' + catline + '</div>'
+    +       '<div class="tn">' + d.name + '</div>'
+    +       '<div class="ts">' + d.sci + '</div>'
+    +     '</div>'
+    +     badgeA
     +   '</div>'
-    +   '<div class="thi">'
-    +     '<div class="tcl">' + catline + '</div>'
-    +     '<div class="tn">' + d.name + '</div>'
-    +     '<div class="ts">' + d.sci + '</div>'
+    +   '<div class="tb">'
+    +     '<div class="tb-row">'
+    +       '<div class="pills">'
+    +         '<span class="cp"><span class="cp-label">CA </span><span class="cp-num">' + d.ca.toLocaleString() + '</span></span>'
+    +         '<span class="cp"><span class="cp-label">Bay </span><span class="cp-num">' + d.ba.toLocaleString() + '</span></span>'
+    +         pk
+    +       '</div>'
+    +       notes
+    +       arrow
+    +     '</div>'
     +   '</div>'
-    +   badge
     + '</div>'
-    + '<div class="tb">'
-    +   '<div class="tb-row">'
-    +     '<div class="pills">'
+    + '<div class="tile tile-back ' + catcl + '">'
+    +   '<div class="tb-back-header">'
+    +     '<span class="tb-back-name">' + backName + '</span>'
+    +     '<div class="tb-back-pills">'
     +       '<span class="cp"><span class="cp-label">CA </span><span class="cp-num">' + d.ca.toLocaleString() + '</span></span>'
     +       '<span class="cp"><span class="cp-label">Bay </span><span class="cp-num">' + d.ba.toLocaleString() + '</span></span>'
-    +       pk
     +     '</div>'
-    +     notes
+    +     badgeB
     +   '</div>'
+    +   '<div class="tb-back-notes">' + (d.notes || '') + '</div>'
+    + '</div>'
     + '</div>'
   + '</div>';
 }
