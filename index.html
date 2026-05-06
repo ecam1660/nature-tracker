@@ -191,9 +191,9 @@ select, .ni {
 
 /* Side B */
 .tb-back-header { display: flex; align-items: center; gap: 6px; padding: 0 10px; height: 40px; flex-shrink: 0; background: var(--c2); border-bottom: 1px solid rgba(0,0,0,0.07); position: relative; }
-.tb-back-name { font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex-shrink: 1; max-width: 42%; }
-.tb-back-pills { display: flex; gap: 4px; flex-shrink: 0; }
-.tb-back-ob { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; flex-shrink: 0; margin-left: auto; }
+.tb-back-name { font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex-shrink: 1; }
+.tb-back-pills { display: flex; gap: 4px; flex-shrink: 0; margin-left: auto; }
+.tb-back-ob { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; flex-shrink: 0; margin-left: 6px; }
 .tb-back-notes { padding: 9px 12px; flex: 1; font-size: 11px; line-height: 1.5; color: var(--cd); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
 
 .none-msg { grid-column: 1/-1; text-align: center; padding: 80px 20px; color: var(--ink-light); }
@@ -360,7 +360,16 @@ function parseCSV(txt) {
     var seen = dv && dv !== '#N/A' && dv !== 'N/A';
     var ba = parseInt((iB >= 0 ? c[iB] : '0' || '0').replace(/,/g,'')) || 0;
     var ca = parseInt((iCA >= 0 ? c[iCA] : '0' || '0').replace(/,/g,'')) || 0;
-    var peak = parseInt((iP >= 0 ? c[iP] : '' || '').trim()) || 0;
+    var peakRaw = (iP >= 0 ? c[iP] : '').trim();
+    var peak = [];
+    if (peakRaw) {
+      var peakParts = peakRaw.split(',');
+      for (var pi = 0; pi < Math.min(peakParts.length, 2); pi++) {
+        var pv = parseInt(peakParts[pi].trim());
+        if (pv >= 1 && pv <= 12) peak.push(pv);
+      }
+      peak.sort(function(a,b){ return a - b; });
+    }
     rows.push({
       cat:   normCat(iCat >= 0 ? (c[iCat] || '').trim() : ''),
       sub:   iSub >= 0 ? (c[iSub] || '').trim() : '',
@@ -579,7 +588,13 @@ function render() {
     if (obsFilter === 'seen'   && !d.seen) return false;
     if (obsFilter === 'unseen' &&  d.seen) return false;
     if (d.ba < minBA) return false;
-    if (activeMonths.indexOf(0) < 0 && activeMonths.indexOf(d.peak) < 0) return false;
+    if (activeMonths.indexOf(0) < 0) {
+      var monthMatch = false;
+      for (var mi = 0; mi < d.peak.length; mi++) {
+        if (activeMonths.indexOf(d.peak[mi]) >= 0) { monthMatch = true; break; }
+      }
+      if (!monthMatch) return false;
+    }
     return true;
   });
 
@@ -628,6 +643,36 @@ function tryNextExt(img, slug) {
   img.nextElementSibling.style.display = 'flex';
 }
 
+function abbrevName(name) {
+  if (name.length <= 25) return name;
+  var abbrevMap = [
+    [/\bNorthwestern\b/g,    'N.W.'],
+    [/\bSouthwestern\b/g,    'S.W.'],
+    [/\bNorth American\b/g,  'N.A.'],
+    [/\bNorthern\b/g,        'N.'],
+    [/\bSouthern\b/g,        'S.'],
+    [/\bEastern\b/g,         'E.'],
+    [/\bWestern\b/g,         'W.'],
+    [/\bCalifornia\b/g,      'CA'],
+    [/\bCommon\b/g,          'C.'],
+    [/\bMountains\b/g,       'Mts.'],
+    [/\bMountain\b/g,        'Mt.'],
+    [/\bMount\b/g,           'Mt.'],
+    [/\bPacific\b/g,         'Pac.'],
+    [/\bAmerican\b/g,        'Am.'],
+    [/\bGreat\b/g,           'Gr.'],
+    [/\bBlack\b/g,           'Bl.'],
+    [/\bWhite\b/g,           'Wh.'],
+    [/\bSlender\b/g,         'Sl.'],
+  ];
+  var shortened = name;
+  for (var ai = 0; ai < abbrevMap.length; ai++) {
+    if (shortened.length <= 25) break;
+    shortened = shortened.replace(abbrevMap[ai][0], abbrevMap[ai][1]);
+  }
+  return shortened;
+}
+
 function flipTile(el) {
   el.classList.toggle('flipped');
 }
@@ -637,8 +682,11 @@ function makeTile(d) {
   var slug    = d.name.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
   var ini     = initials(d.name);
   var catline = d.sub ? d.cat + ': ' + d.sub : d.cat;
-  var pk      = d.peak ? '<span class="pp">' + MONTHS[d.peak] + '</span>' : '';
-  var notes   = d.notes ? '<div class="tnotes">' + d.notes + '</div>' : '';
+  var pk = '';
+  for (var pi = 0; pi < d.peak.length; pi++) {
+    pk += '<span class="pp">' + MONTHS[d.peak[pi]] + '</span>';
+  }
+  var notes   = '';
   var arrow   = d.notes ? '<span class="flip-arrow">\u21bb</span>' : '';
   var badgeA  = d.seen
     ? '<div class="ob ob-y" title="Observed ' + d.date + '">\u2713</div>'
@@ -647,12 +695,7 @@ function makeTile(d) {
     ? '<div class="tb-back-ob ob-y">\u2713</div>'
     : '<div class="tb-back-ob ob-n"></div>';
 
-  var backName = d.name;
-  if (backName.length > 22) {
-    var parts = backName.split(' ');
-    if (parts.length > 1) backName = parts[0][0] + '. ' + parts.slice(1).join(' ');
-    if (backName.length > 22) backName = backName.substring(0, 20) + '\u2026';
-  }
+  var backName = abbrevName(d.name);
 
   return '<div class="tile-wrap ' + catcl + '" onclick="flipTile(this)">'
     + '<div class="tile-inner">'
@@ -666,7 +709,7 @@ function makeTile(d) {
     +     '</div>'
     +     '<div class="thi">'
     +       '<div class="tcl">' + catline + '</div>'
-    +       '<div class="tn">' + d.name + '</div>'
+    +       '<div class="tn">' + abbrevName(d.name) + '</div>'
     +       '<div class="ts">' + d.sci + '</div>'
     +     '</div>'
     +     badgeA
