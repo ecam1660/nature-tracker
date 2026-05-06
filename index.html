@@ -43,16 +43,16 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; b
 .header h1 { font-family: Georgia, 'Times New Roman', serif; font-size: 20px; font-weight: 400; color: #9aa87a; white-space: nowrap; }
 .header h1 em { font-style: normal; color: #9aa87a; }
 .hcounts { font-size: 11px; color: #6a7a68; letter-spacing: 0.04em; text-transform: uppercase; flex: 1; }
-.update-btn {
+.update-btn, .nav-btn {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-size: 11px; font-weight: 500;
   padding: 5px 12px; border-radius: 99px;
   border: 1px solid rgba(255,255,255,0.2);
   background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.7);
   cursor: pointer; white-space: nowrap; transition: all 0.15s;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.02em; text-decoration: none; display: inline-block;
 }
-.update-btn:hover { background: rgba(255,255,255,0.16); color: white; border-color: rgba(255,255,255,0.35); }
+.update-btn:hover, .nav-btn:hover { background: rgba(255,255,255,0.16); color: white; border-color: rgba(255,255,255,0.35); }
 
 .toolbar {
   background: var(--white); border-bottom: 1px solid var(--border);
@@ -173,6 +173,7 @@ select, .ni {
 <div class="header">
   <h1>California Nature Tracker</h1>
   <span class="hcounts" id="hc">Loading…</span>
+  <a class="nav-btn" href="photo_prep.html">&#9881; Photo Prep</a>
   <button class="update-btn" onclick="document.getElementById('fi').click()" title="Replace with updated CSV">&#8593; Update CSV</button>
 </div>
 
@@ -269,9 +270,11 @@ var CAT_CLASS = {
   'birds':              'cat-birds',
   'snakes':             'cat-snakes',
   'newts & salamanders':'cat-newts-salamanders',
+  'salamanders':        'cat-newts-salamanders',
   'moths':              'cat-moths',
   'turles & tortoises': 'cat-turtles',
   'turtles & tortoises':'cat-turtles',
+  'turtles':            'cat-turtles',
   'nudibranchs':        'cat-nudibranchs',
   'dragonflies':        'cat-dragonflies',
   'damselflies':        'cat-damselflies'
