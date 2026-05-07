@@ -673,8 +673,14 @@ function abbrevName(name) {
   return shortened;
 }
 
-function flipTile(el) {
-  el.classList.toggle('flipped');
+function flipTile(el, event) {
+  var rect = el.getBoundingClientRect();
+  var x = event.clientX - rect.left;
+  var y = event.clientY - rect.top;
+  // Only flip if click is in bottom-right quarter of the tile
+  if (x > rect.width * 0.6 && y > rect.height * 0.5) {
+    el.classList.toggle('flipped');
+  }
 }
 
 function makeTile(d) {
@@ -697,7 +703,7 @@ function makeTile(d) {
 
   var backName = abbrevName(d.name);
 
-  return '<div class="tile-wrap ' + catcl + '" onclick="flipTile(this)">'
+  return '<div class="tile-wrap ' + catcl + '" onclick="flipTile(this,event)">'
     + '<div class="tile-inner">'
     + '<div class="tile">'
     +   '<div class="th">'
