@@ -400,9 +400,26 @@ function parseCSV(txt) {
     }
     return -1;
   }
+  function exactCol(name) {
+    name = name.toLowerCase();
+    for (var i = 0; i < heads.length; i++) {
+      if (heads[i].trim() === name) return i;
+    }
+    return -1;
+  }
+  function parsePeaks(raw) {
+    // "3,4" -> [3,4]; "5" -> [5]; "" -> []
+    return (raw || '').split(',').map(function(s) {
+      var n = parseInt(s.trim());
+      return (n >= 1 && n <= 12) ? n : 0;
+    }).filter(function(n) { return n > 0; });
+  }
   var iCat=col('category'), iSub=col('subcategory'), iNm=col('name');
   var iSci=col('scientific name'), iDt=col('life list date');
-  var iCA=col('ca obsv'), iReg=col('region'), iRP=col('regional peak'), iNo=col('notes');
+  var iCA=col('ca obsv'), iNo=col('notes');
+  var iR1=exactCol('r1'), iR1p=exactCol('r1 peak');
+  var iR2=exactCol('r2'), iR2p=exactCol('r2 peak');
+  var iR3=exactCol('r3'), iR3p=exactCol('r3 peak');
   var rows = [];
   for (var i = 1; i < lines.length; i++) {
     var c = splitCSVRow(lines[i]);
@@ -411,16 +428,20 @@ function parseCSV(txt) {
     var dv = iDt >= 0 ? (c[iDt] || '').trim() : '';
     var seen = !!(dv && dv !== '#N/A' && dv !== 'N/A');
     var ca = parseInt(((iCA >= 0 ? c[iCA] : '') || '0').replace(/,/g, '')) || 0;
-    var regCode = iReg >= 0 ? (c[iReg] || '').trim() : '';
-    var rpRaw = iRP >= 0 ? (c[iRP] || '').trim() : '';
-    var rpNum = parseInt(rpRaw);
-    var regPeak = (rpNum >= 1 && rpNum <= 12) ? rpNum : 0;
+    // Build regions array [{code, peaks:[]}] — only include non-empty
+    var regions = [];
+    [[iR1,iR1p],[iR2,iR2p],[iR3,iR3p]].forEach(function(pair) {
+      var rcode = pair[0] >= 0 ? (c[pair[0]] || '').trim() : '';
+      if (!rcode) return;
+      var peaks = pair[1] >= 0 ? parsePeaks(c[pair[1]]) : [];
+      regions.push({ code: rcode, peaks: peaks });
+    });
     rows.push({
       cat: normCat(iCat >= 0 ? (c[iCat] || '').trim() : ''),
       sub: iSub >= 0 ? (c[iSub] || '').trim() : '',
       name: name, sci: iSci >= 0 ? (c[iSci] || '').trim() : '',
       seen: seen, date: seen ? dv : '', ca: ca,
-      region: regCode, regPeak: regPeak,
+      regions: regions,
       notes: iNo >= 0 ? (c[iNo] || '').trim() : ''
     });
   }
@@ -494,16 +515,27 @@ function setToggle(val) {
 function render() {
   var f = allData.filter(function(d) {
     if (activeCats.indexOf('__a__') < 0 && activeCats.indexOf(d.cat) < 0) return false;
-    if (activeRegion && d.region !== activeRegion) return false;
-    if (activeMonths.indexOf(0) < 0 && (!d.regPeak || activeMonths.indexOf(d.regPeak) < 0)) return false;
     if (activeToggle === 'seen' && !d.seen) return false;
     if (activeToggle === 'unseen' && d.seen) return false;
+    // Only show tiles that have at least one region assigned
+    if (!d.regions || !d.regions.length) return false;
+    // If a region is selected, species must belong to it
+    if (activeRegion) {
+      var inRegion = d.regions.some(function(r) { return r.code === activeRegion; });
+      if (!inRegion) return false;
+      // If month filter active, check peaks for the active region
+      if (activeMonths.indexOf(0) < 0) {
+        var rMatch = null;
+        d.regions.forEach(function(r) { if (r.code === activeRegion) rMatch = r; });
+        if (!rMatch || !rMatch.peaks.some(function(p) { return activeMonths.indexOf(p) >= 0; })) return false;
+      }
+    }
     return true;
   });
   f.sort(function(a, b) { return (b.ca || 0) - (a.ca || 0); });
   document.getElementById('rbar').style.display = allData.length ? 'flex' : 'none';
   document.getElementById('rtxt').innerHTML =
-    'Showing <strong>' + f.length + '</strong> of ' + allData.length + ' species'
+    'Showing <strong>' + f.length + '</strong> of ' + allData.filter(function(d){return d.regions&&d.regions.length;}).length + ' species with region data'
     + (activeRegion ? ' in <strong>' + activeRegion + '</strong>' : '');
   var grid = document.getElementById('mini-grid');
   if (!allData.length) {
@@ -520,15 +552,54 @@ function render() {
 }
 
 /* ===== MINI TILE ===== */
+function abbrevName(name) {
+  if (name.length <= 22) return name;
+  var abbrevMap = [
+    [/\bNorthwestern\b/g,    'N.W.'],
+    [/\bSouthwestern\b/g,    'S.W.'],
+    [/\bNorth American\b/g,  'N.A.'],
+    [/\bNorthern\b/g,        'N.'],
+    [/\bSouthern\b/g,        'S.'],
+    [/\bEastern\b/g,         'E.'],
+    [/\bWestern\b/g,         'W.'],
+    [/\bCalifornia\b/g,      'CA'],
+    [/\bCommon\b/g,          'C.'],
+    [/\bMountains\b/g,       'Mts.'],
+    [/\bMountain\b/g,        'Mt.'],
+    [/\bMount\b/g,           'Mt.'],
+    [/\bPacific\b/g,         'Pac.'],
+    [/\bAmerican\b/g,        'Am.'],
+    [/\bGreat\b/g,           'Gr.'],
+    [/\bBlack\b/g,           'Bl.'],
+    [/\bWhite\b/g,           'Wh.'],
+    [/\bSlender\b/g,         'Sl.'],
+  ];
+  var shortened = name;
+  for (var ai = 0; ai < abbrevMap.length; ai++) {
+    if (shortened.length <= 22) break;
+    shortened = shortened.replace(abbrevMap[ai][0], abbrevMap[ai][1]);
+  }
+  return shortened;
+}
+
 function makeMiniTile(d) {
   var catcl = getCatClass(d.cat);
   var slug = d.name.toLowerCase().replace(/[\u2018\u2019']/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
   var ini = d.name.split(' ').slice(0, 2).map(function(w) { return (w[0] || '').toUpperCase(); }).join('');
   var chkCl = d.seen ? '' : ' unseen';
   var chkTxt = d.seen ? '&#10003;' : '';
-  var obsRow = d.region
-    ? '<span class="mini-reg-txt">' + d.region + ' peak:</span><span class="mini-peak-pill">' + (d.regPeak ? MONTHS[d.regPeak] : '&mdash;') + '</span>'
-    : '';
+  // Footer: only show region+peaks when a region is selected and this species belongs to it
+  var obsRow = '';
+  if (activeRegion && d.regions) {
+    var rMatch = null;
+    d.regions.forEach(function(r) { if (r.code === activeRegion) rMatch = r; });
+    if (rMatch) {
+      var peakPills = rMatch.peaks.length
+        ? rMatch.peaks.map(function(p) { return '<span class="mini-peak-pill">' + MONTHS[p] + '</span>'; }).join('')
+        : '<span class="mini-peak-pill">&mdash;</span>';
+      obsRow = '<span class="mini-reg-txt">' + rMatch.code + ' peak:</span>' + peakPills;
+    }
+  }
   var backNotes = d.notes
     ? '<hr class="mini-divider"><div class="mini-back-lbl" style="margin-bottom:2px">Notes</div><div class="mini-notes">' + d.notes + '</div>'
     : '';
@@ -536,12 +607,12 @@ function makeMiniTile(d) {
     '<div class="mini-scene ' + catcl + '">' +
       '<div class="mini-inner">' +
         '<div class="mini-face">' +
-          '<div class="mini-hdr"><span class="mini-name">' + d.name + '</span><span class="mini-chk' + chkCl + '">' + chkTxt + '</span></div>' +
+          '<div class="mini-hdr"><span class="mini-name">' + abbrevName(d.name) + '</span><span class="mini-chk' + chkCl + '">' + chkTxt + '</span></div>' +
           '<div class="mini-photo"><img src="photos/' + slug + '.jpg" onerror="imgFail(this)" data-slug="' + slug + '" style="width:100%;height:100%;object-fit:cover;display:block"><div class="mini-initials" style="display:none">' + ini + '</div></div>' +
           '<div class="mini-obs">' + obsRow + '</div>' +
         '</div>' +
         '<div class="mini-face mini-back">' +
-          '<div class="mini-hdr"><span class="mini-name">' + d.name + '</span><span class="mini-chk' + chkCl + '">' + chkTxt + '</span></div>' +
+          '<div class="mini-hdr"><span class="mini-name">' + abbrevName(d.name) + '</span><span class="mini-chk' + chkCl + '">' + chkTxt + '</span></div>' +
           '<div class="mini-back-body"><div class="mini-back-row"><span class="mini-back-lbl">CA observations</span><span class="mini-back-val">' + d.ca.toLocaleString() + '</span></div>' + backNotes + '</div>' +
         '</div>' +
       '</div>' +
