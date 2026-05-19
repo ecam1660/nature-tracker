@@ -191,9 +191,13 @@ select, .ni {
 
 /* Side B */
 .tb-back-header { display: flex; align-items: center; gap: 6px; padding: 0 10px; height: 40px; flex-shrink: 0; background: var(--c2); border-bottom: 1px solid rgba(0,0,0,0.07); position: relative; }
-.tb-back-name { font-family: Georgia, 'Times New Roman', serif; font-size: 12px; font-weight: 600; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex-shrink: 1; }
+.tb-back-name { font-family: Georgia, 'Times New Roman', serif; font-size: 13.5px; font-weight: 600; color: var(--ink); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; flex-shrink: 1; }
 .tb-back-pills { display: flex; gap: 4px; flex-shrink: 0; margin-left: auto; }
 .tb-back-ob { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; flex-shrink: 0; margin-left: 6px; }
+.tb-back-rpills { display:flex; gap:3px; align-items:center; flex-shrink:0; margin-left:5px; }
+.tb-back-rpill { font-size:9.5px; font-weight:600; padding:2px 7px; border-radius:99px; color:#fff; white-space:nowrap; letter-spacing:.02em; }
+.tb-back-body { flex:1; display:flex; min-height:0; overflow:hidden; }
+.tb-back-notes-text { flex:1; padding:7px 10px; font-size:12px; line-height:1.5; color:var(--cd); font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; overflow:hidden; }
 .tb-back-notes { padding: 9px 12px; flex: 1; font-size: 11px; line-height: 1.5; color: var(--cd); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; }
 
 .none-msg { grid-column: 1/-1; text-align: center; padding: 80px 20px; color: var(--ink-light); }
@@ -351,6 +355,14 @@ function parseCSV(txt) {
   var iB   = col('bay obsv');
   var iP   = col('bay peak');
   var iNo  = col('notes');
+  function exactCol(nm) {
+    nm = nm.toLowerCase();
+    for (var i = 0; i < heads.length; i++) { if (heads[i].trim() === nm) return i; }
+    return -1;
+  }
+  var iR1=exactCol('r1'), iR1p=exactCol('r1 peak');
+  var iR2=exactCol('r2'), iR2p=exactCol('r2 peak');
+  var iR3=exactCol('r3'), iR3p=exactCol('r3 peak');
 
   var rows = [];
   for (var i = 1; i < lines.length; i++) {
@@ -371,6 +383,12 @@ function parseCSV(txt) {
       }
       peak.sort(function(a,b){ return a - b; });
     }
+    var regions = [];
+    [[iR1,iR1p],[iR2,iR2p],[iR3,iR3p]].forEach(function(pair) {
+      var rc = pair[0] >= 0 ? (c[pair[0]] || '').trim() : '';
+      if (!rc) return;
+      regions.push(rc);
+    });
     rows.push({
       cat:   normCat(iCat >= 0 ? (c[iCat] || '').trim() : ''),
       sub:   iSub >= 0 ? (c[iSub] || '').trim() : '',
@@ -381,7 +399,8 @@ function parseCSV(txt) {
       ba:    ba,
       ca:    ca,
       peak:  peak,
-      notes: iNo >= 0 ? (c[iNo] || '').trim() : ''
+      notes: iNo >= 0 ? (c[iNo] || '').trim() : '',
+      regions: regions
     });
   }
   return rows;
@@ -684,6 +703,18 @@ function flipTile(el, event) {
   }
 }
 
+var REGION_COLORS = {
+  'NCo':'#3f736e','NCoR':'#6d9d7a','KR':'#8fa26e','CaR':'#4f7a5a',
+  'SNF':'#93a6bc','SNH':'#797db6','Teh':'#7c93ae','GV':'#b7c26b',
+  'SnFrB':'#aaced0','CCo':'#769289','SCoR':'#9fae9a','ChI':'#61476e',
+  'SCo':'#8e75b0','TR':'#c9a5c0','PR':'#b576a6','MP':'#d9c3a6',
+  'SNE':'#a69585','DMoj':'#c9a26d','DMtns':'#b86d3d','DSon':'#d1a24a'
+};
+function regionPillHTML(code) {
+  var bg = REGION_COLORS[code] || '#a69585';
+  return '<span class="tb-back-rpill" style="background:' + bg + '">' + code + '</span>';
+}
+
 function makeTile(d) {
   var catcl   = getCatClass(d.cat);
   var slug    = d.name.toLowerCase().replace(/['’]/g, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
@@ -736,13 +767,12 @@ function makeTile(d) {
     + '<div class="tile tile-back ' + catcl + '">'
     +   '<div class="tb-back-header">'
     +     '<span class="tb-back-name">' + backName + '</span>'
-    +     '<div class="tb-back-pills">'
-    +       '<span class="cp"><span class="cp-label">CA </span><span class="cp-num">' + d.ca.toLocaleString() + '</span></span>'
-    +       '<span class="cp"><span class="cp-label">Bay </span><span class="cp-num">' + d.ba.toLocaleString() + '</span></span>'
-    +     '</div>'
+    +     (d.regions && d.regions.length ? '<span class="tb-back-rpills">' + d.regions.map(regionPillHTML).join('') + '</span>' : '')
     +     badgeB
     +   '</div>'
-    +   '<div class="tb-back-notes">' + (d.notes || '') + '</div>'
+    +   '<div class="tb-back-body">'
+    +     (d.notes ? '<div class="tb-back-notes-text">' + d.notes + '</div>' : '')
+    +   '</div>'
     + '</div>'
     + '</div>'
   + '</div>';
@@ -754,6 +784,7 @@ function initials(n) {
   for (var i = 0; i < Math.min(parts.length, 2); i++) out += (parts[i][0] || '').toUpperCase();
   return out;
 }
+
 </script>
 </body>
 </html>
