@@ -171,8 +171,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;backgrou
   </div>
 </div>
 
-<script src="jepson_map.js"></script>
+<script src="jepson_map.js" onload="initApp()"></script>
 <script>
+function initApp() {
 /* ===== OVERRIDE Jepson toggleRegion for single-select + chip sync ===== */
 var _jepsonToggle = toggleRegion;
 toggleRegion = function(idx) {
@@ -479,8 +480,7 @@ function render() {
   f.sort(function(a, b) { return (b.ca || 0) - (a.ca || 0); });
   document.getElementById('rbar').style.display = allData.length ? 'flex' : 'none';
   document.getElementById('rtxt').innerHTML =
-    'Showing <strong>' + f.length + '</strong> of ' + allData.filter(function(d){return d.regions&&d.regions.length;}).length + ' species with region data'
-    + (activeRegion ? ' in <strong>' + activeRegion + '</strong>' : '');
+    'Showing <strong>' + f.length + '</strong> of ' + allData.filter(function(d){return d.regions&&d.regions.length;}).length + ' species with region data';
   var grid = document.getElementById('mini-grid');
   if (!allData.length) {
     grid.innerHTML = '<div class="none-msg"><h3>Load your CSV to get started</h3><p>Click <strong>Load CSV</strong> in the header.</p></div>';
@@ -637,6 +637,7 @@ window.addEventListener('resize', positionBodyWrap);
 })();
 
 function imgFail(img) { tryExt(img, img.getAttribute('data-slug') || ''); }
+} // end initApp
 </script>
 </body>
 </html>

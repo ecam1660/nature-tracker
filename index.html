@@ -686,8 +686,9 @@ function tryNextExt(img, slug) {
   img.nextElementSibling.style.display = 'flex';
 }
 
-function abbrevName(name) {
-  if (name.length <= 25) return name;
+function abbrevName(name, threshold) {
+  if (!threshold) threshold = 22;
+  if (name.length <= threshold) return name;
   var abbrevMap = [
     [/\bNorthwestern\b/g,    'N.W.'],
     [/\bSouthwestern\b/g,    'S.W.'],
@@ -710,7 +711,7 @@ function abbrevName(name) {
   ];
   var shortened = name;
   for (var ai = 0; ai < abbrevMap.length; ai++) {
-    if (shortened.length <= 25) break;
+    if (shortened.length <= threshold) break;
     shortened = shortened.replace(abbrevMap[ai][0], abbrevMap[ai][1]);
   }
   return shortened;
@@ -758,7 +759,7 @@ function makeTile(d) {
     ? '<div class="tb-back-ob ob-y">\u2713</div>'
     : '<div class="tb-back-ob ob-n"></div>';
 
-  var backName = abbrevName(d.name);
+  var backName = abbrevName(d.name, 32);
 
   return '<div class="tile-wrap ' + catcl + '" onclick="flipTile(this,event)">'
     + '<div class="tile-inner">'
