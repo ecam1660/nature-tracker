@@ -564,22 +564,6 @@ function makeMiniTile(d) {
   );
 }
 
-function tryExt(img, slug) {
-  var exts = ['png', 'webp'];
-  var src = img.src;
-  for (var i = 0; i < exts.length; i++) {
-    if (src.indexOf('.' + exts[i]) < 0 && (i === 0 || src.indexOf('.' + exts[i - 1]) >= 0)) {
-      var j = i;
-      img.onerror = j < exts.length - 1
-        ? function() { tryExt(img, slug); }
-        : function() { img.style.display = 'none'; img.nextElementSibling.style.display = 'flex'; };
-      img.src = 'photos/' + slug + '.' + exts[i];
-      return;
-    }
-  }
-  img.style.display = 'none';
-  img.nextElementSibling.style.display = 'flex';
-}
 
 /* ===== TILE CLICK (delegated) ===== */
 document.getElementById('mini-grid').addEventListener('click', function(e) {
@@ -632,8 +616,25 @@ window.addEventListener('resize', positionBodyWrap);
   try { xhr.send(); } catch(e) {}
 })();
 
-function imgFail(img) { tryExt(img, img.getAttribute('data-slug') || ''); }
 } // end initApp
+
+function tryExt(img, slug) {
+  var exts = ['png', 'webp'];
+  var src = img.src;
+  for (var i = 0; i < exts.length; i++) {
+    if (src.indexOf('.' + exts[i]) < 0 && (i === 0 || src.indexOf('.' + exts[i - 1]) >= 0)) {
+      var j = i;
+      img.onerror = j < exts.length - 1
+        ? function() { tryExt(img, slug); }
+        : function() { img.style.display = 'none'; img.nextElementSibling.style.display = 'flex'; };
+      img.src = 'photos/' + slug + '.' + exts[i];
+      return;
+    }
+  }
+  img.style.display = 'none';
+  img.nextElementSibling.style.display = 'flex';
+}
+function imgFail(img) { tryExt(img, img.getAttribute('data-slug') || ''); }
 initApp();
 </script>
 </body>
