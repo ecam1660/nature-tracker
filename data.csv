@@ -10,7 +10,7 @@ Butterflies,Beak & Snout Butterflies,American Snout,Libytheana carinenta,2024-03
 Mammals,Beaked Whales,Baird's Beaked Whale,Berardius bairdii,#N/A,10,4,,,,,,,,,,Yes
 Mammals,Beavers,American Beaver,Castor canadensis,2024-07-16,"2,451","1,233",,,,,,,,,,No
 Flowers,Bellflowers,California Harebell,Smithiastrum prenanthoides,#N/A,"2,447","1,420",7,Mt Tam,SnFrB,7,,,,,,No
-Flowers,Bellflowers,Marsh Harebell,Eastwoodiella californica,#N/A,307,278,7,,SnFrB,7,,,,,Yes,No
+Flowers,Bellflowers,Marsh Harebell,Eastwoodiella californica,#N/A,307,278,7,,SnFrB,7,,,,,,No
 Flowers,Bellflowers,Common Bluecup,Githopsis specularioides,#N/A,278,136,4,,SnFrB,4,,,,,,No
 Flowers,Bellflowers,Chaparral Harebell,Ravenella exigua,#N/A,106,101,5,,SnFrB,5,,,,,,No
 Flowers,Bellflowers,Griffin's Bellflower,Ravenella griffinii,#N/A,58,56,6,,SnFrB,6,,,,,,No
@@ -46,9 +46,9 @@ Butterflies,Blues,Anna's Blue,Plebejus anna,2023-08-05,442,0,,,,,,,,,,No
 Butterflies,Blues,Bernardino Blue,Euphilotes bernardino,#N/A,"1,975",0,,Mojave/Colorado desert,,,,,,,,No
 Butterflies,Blues,Lupine Blue,Icaricia lupini,#N/A,469,0,,,,,,,,,,No
 Butterflies,Blues,Shasta Blue,Icaricia shasta,#N/A,407,0,,,,,,,,,,No
-Butterflies,Blues,Arrowhead Blue,Glaucopsyche piasus,#N/A,224,0,,,SNE,6,,,,,,No
+Butterflies,Blues,Arrowhead Blue,Glaucopsyche piasus,#N/A,224,0,,,SNE,6,,,,,Yes,No
 Butterflies,Blues,El Segundo Blue,Euphilotes allyni,#N/A,222,0,,,,,,,,,,No
-Butterflies,Blues,Glaucon Blue,Euphilotes glaucon,#N/A,192,0,,,SNE,6,,,,,,No
+Butterflies,Blues,Glaucon Blue,Euphilotes glaucon,#N/A,192,0,,,SNE,6,,,,,Yes,No
 Butterflies,Blues,Friday's Blue,Plebejus fridayi,#N/A,151,0,,,,,,,,,,No
 Butterflies,Blues,Square-spotted Blue,Euphilotes battoides,2025-05-18,49,0,,,,,,,,,,No
 Butterflies,Blues,Veined Blue,Icaricia neurona,#N/A,79,0,,,,,,,,,,No
@@ -169,7 +169,7 @@ Flowers,Clarkia,Elegant Clarkia,Clarkia unguiculata,2025-05-26,"7,856","3,360",,
 Flowers,Clarkia,Winecup Clarkia,Clarkia purpurea,2024-05-22,"7,415","3,209",,,,,,,,,,No
 Flowers,Clarkia,Ruby Chalice Clarkia,Clarkia rubicunda,2023-08-16,"5,249","5,198",,,,,,,,,,No
 Flowers,Clarkia,Red Ribbons,Clarkia concinna,2024-06-06,"2,583","2,052",,,,,,,,,,No
-Flowers,Clarkia,Fairy Fans,Clarkia breweri,#N/A,338,261,5,,SnFrB,5,,,,,Yes,No
+Flowers,Clarkia,Fairy Fans,Clarkia breweri,#N/A,338,261,5,,SnFrB,5,,,,,,No
 Flowers,Clarkia,Chaparral Clarkia,Clarkia affinis,#N/A,250,221,5,,SnFrB,5,,,,,,No
 Flowers,Clarkia,Davy's Clarkia,Clarkia davyi,#N/A,209,194,6,,SnFrB,6,,,,,,No
 Flowers,Clarkia,Twolobe Clarkia,Clarkia biloba,2026-06-06,476,110,6,,SnFrB,6,,,,,,No
@@ -215,20 +215,20 @@ Dragonflies,Clubtails,Great Basin Snaketail,Ophiogomphus morrisoni,#N/A,50,0,,,,
 Dragonflies,Clubtails,Russet-tipped Clubtail,Stylurus plagiatus,#N/A,43,0,,,,,,,,,,No
 Dragonflies,Clubtails,Brimstone Clubtail,Stylurus intricatus,#N/A,39,0,,,,,,,,,,No
 Dragonflies,Clubtails,Pale Snaketail,Ophiogomphus severus,#N/A,12,0,,,,,,,,,,No
-Lizards,Collared Lizards,Desert Collared Lizard,Crotaphytus bicinctores,#N/A,"1,192",1,,,SNE,6,,,,,,No
-Lizards,Collared Lizards,Long-nosed Leopard Lizard,Gambelia wislizenii,#N/A,"2,122",0,,Mojave/Colorado desert,SNE,6,,,,,,No
+Lizards,Collared Lizards,Desert Collared Lizard,Crotaphytus bicinctores,#N/A,"1,192",1,,,SNE,6,,,,,Yes,No
+Lizards,Collared Lizards,Long-nosed Leopard Lizard,Gambelia wislizenii,#N/A,"2,122",0,,Mojave/Colorado desert,SNE,6,,,,,Yes,No
 Lizards,Collared Lizards,Blunt-nosed Leopard Lizard,Gambelia sila,#N/A,389,0,,,,,,,,,,No
 Lizards,Collared Lizards,Baja California Collared Lizard,Crotaphytus vestigium,#N/A,220,0,,,,,,,,,,No
 Lizards,Collared Lizards,Cope's Leopard Lizard,Gambelia copeii,#N/A,18,0,,,,,,,,,,No
 Snakes,Colubrid Snakes,Gopher Snake,Pituophis catenifer,2023-06-12,"36,029","13,254",,,,,,,,,,No
-Snakes,Colubrid Snakes,California King Snake,Lampropeltis californiae,#N/A,"11,432","3,404",5,"Sibley, Las Gallinas",SnFrB,5,SNE,6,,,,No
+Snakes,Colubrid Snakes,California King Snake,Lampropeltis californiae,#N/A,"11,432","3,404",5,"Sibley, Las Gallinas",SnFrB,5,SNE,6,,,Yes,No
 Snakes,Colubrid Snakes,Common Sharp-tailed Snake,Contia tenuis,#N/A,"3,707","2,379",4,,SnFrB,4,,,,,,No
 Snakes,Colubrid Snakes,Western Terrestrial Garter Snake,Thamnophis elegans,2023-11-11,"8,342","5,300",,,,,,,,,,No
 Snakes,Colubrid Snakes,Common Garter Snake,Thamnophis sirtalis,#N/A,"5,168","1,821",4,,SnFrB,4,,,,,,No
 Snakes,Colubrid Snakes,Ring-necked Snake,Diadophis punctatus,2024-08-13,"6,629","3,712",,,,,,,,,,No
 Snakes,Colubrid Snakes,Striped Racer,Masticophis lateralis,2024-08-13,"4,527",419,,,,,,,,,,No
 Snakes,Colubrid Snakes,Aquatic Garter Snake,Thamnophis atratus,2024-08-13,"3,327","2,426",,,,,,,,,,No
-Snakes,Colubrid Snakes,Coachwhip,Masticophis flagellum,2022-04-30,"2,694",9,,,SNE,6,,,,,,No
+Snakes,Colubrid Snakes,Coachwhip,Masticophis flagellum,2022-04-30,"2,694",9,,,SNE,6,,,,,Yes,No
 Snakes,Colubrid Snakes,North American Racer,Coluber constrictor,2024-06-17,"2,617","1,592",,,,,,,,,,No
 Snakes,Colubrid Snakes,Forest Sharp-tailed Snake,Contia longicauda,#N/A,448,400,6,Mountains north of Santa Cruz,SnFrB,6,,,,,,No
 Snakes,Colubrid Snakes,California Mountain Kingsnake,Lampropeltis zonata,#N/A,838,238,5,,SnFrB,5,,,,,,No
@@ -262,7 +262,7 @@ Butterflies,Coppers,Blue Copper,Tharsalea heteronea,2024-07-07,477,209,,,,,,,,,,
 Butterflies,Coppers,Lilac-bordered Copper,Tharsalea nivalis,2023-08-05,435,0,,,,,,,,,,No
 Butterflies,Coppers,Mariposa Copper,Tharsalea mariposa,2023-10-14,200,0,,,,,,,,,,No
 Butterflies,Coppers,Edith's Copper,Tharsalea editha,#N/A,688,0,,,,,,,,,,No
-Butterflies,Coppers,Lustrous Copper,Lycaena cupreus,#N/A,511,0,,,SNE,6,,,,,,No
+Butterflies,Coppers,Lustrous Copper,Lycaena cupreus,#N/A,511,0,,,SNE,6,,,,,Yes,No
 Butterflies,Coppers,Ruddy Copper,Tharsalea rubidus,#N/A,244,0,,,,,,,,,,No
 Butterflies,Coppers,Hermes Copper,Tharsalea hermes,#N/A,163,0,,,,,,,,,,No
 Butterflies,Coppers,American Copper,Lycaena hypophlaeas,2024-06-26,15,0,,,,,,,,,,No
@@ -358,7 +358,7 @@ Dragonflies,Emerald Dragonflies,American Emerald,Cordulia shurtleffii,#N/A,252,0
 Dragonflies,Emerald Dragonflies,Mountain Emerald,Somatochlora semicircularis,#N/A,70,0,,,,,,,,,,No
 Dragonflies,Emerald Dragonflies,Spiny Baskettail,Epitheca spinigera,#N/A,20,0,,,,,,,,,,No
 Moths,Emperor Moths,Ceanothus Silk Moth,Hyalophora euryalus,#N/A,"3,610","1,361",4,,SnFrB,4,,,,,,No
-Moths,Emperor Moths,Polyphemus Moth,Antheraea polyphemus,#N/A,"1,384",613,5,,SnFrB,5,,,,,Yes,No
+Moths,Emperor Moths,Polyphemus Moth,Antheraea polyphemus,#N/A,"1,384",613,5,,SnFrB,5,,,,,,No
 Moths,Emperor Moths,Mendocino Silk Moth,Calosaturnia mendocino,#N/A,33,12,,,,,,,,,,No
 Moths,Emperor Moths,Glover's Silkmoth,Hyalophora gloveri,#N/A,87,0,,,,,,,,,,No
 Moths,Emperor Moths,Walter's Silkmoth,Calosaturnia walterorum,#N/A,13,0,,,,,,,,,,No
@@ -450,7 +450,7 @@ Butterflies,Hairstreaks,Thicket Hairstreak,Callophrys spinetorum,#N/A,149,32,,,,
 Butterflies,Hairstreaks,Western Pine Elfin,Callophrys eryphon,2025-04-21,615,140,,,,,,,,,,No
 Butterflies,Hairstreaks,Gold-hunter's Hairstreak,Satyrium auretorum,#N/A,310,14,,,,,,,,,,No
 Butterflies,Hairstreaks,Juniper Hairstreak,Callophrys gryneus,#N/A,"1,072",2,,,,,,,,,,No
-Butterflies,Hairstreaks,Behr's Hairstreak,Satyrium behrii,#N/A,742,0,,,SNE,6,,,,,,No
+Butterflies,Hairstreaks,Behr's Hairstreak,Satyrium behrii,#N/A,742,0,,,SNE,6,,,,,Yes,No
 Butterflies,Hairstreaks,Loki Hairstreak,Callophrys loki,#N/A,303,0,,,,,,,,,,No
 Butterflies,Hairstreaks,Sheridan's Hairstreak,Callophrys sheridanii,2025-05-19,114,0,,,,,,,,,,No
 Butterflies,Hairstreaks,Sagebrush Sooty Hairstreak,Satyrium semiluna,2023-08-06,111,0,,,,,,,,,,No
@@ -467,14 +467,14 @@ Mammals,Hares & Rabbits,Black-tailed Jackrabbit,Lepus californicus,2023-03-17,"1
 Mammals,Hares & Rabbits,Brush Rabbit,Sylvilagus bachmani,2023-08-16,"9,013","5,785",,,,,,,,,,No
 Mammals,Hares & Rabbits,European Rabbit,Oryctolagus cuniculus,2023-08-31,321,107,,,,,,,,,,No
 Mammals,Hares & Rabbits,Mountain Cottontail,Sylvilagus nuttallii,2025-08-03,223,0,,,,,,,,,,No
-Mammals,Hares & Rabbits,White-tailed Jackrabbit,Lepus townsendii,#N/A,163,0,,,SNE,6,,,,,,No
+Mammals,Hares & Rabbits,White-tailed Jackrabbit,Lepus townsendii,#N/A,163,0,,,SNE,6,,,,,Yes,No
 Mammals,Hares & Rabbits,Snowshoe Hare,Lepus americanus,#N/A,102,0,,,,,,,,,,No
 Flowers,Hellebores & Trilliums,Pacific Trillium,Trillium ovatum,2026-04-03,"15,918","9,942",,,,,,,,,,No
 Flowers,Hellebores & Trilliums,Fremont's Death Camas,Toxicoscordion fremontii,2026-03-21,"10,917","8,046",,,,,,,,,,No
 Flowers,Hellebores & Trilliums,Corn Lily,Veratrum californicum,2023-08-06,"6,384",0,,,,,,,,,,No
 Flowers,Hellebores & Trilliums,Giant Wakerobin,Trillium chloropetalum,2024-02-25,"6,005","5,779",,,,,,,,,,No
 Flowers,Hellebores & Trilliums,Giant White Wakerobin,Trillium albidum,#N/A,"1,285",688,3,,SnFrB,3,,,,,,No
-Flowers,Hellebores & Trilliums,Common Beargrass,Xerophyllum tenax,#N/A,"1,129",274,5,,SnFrB,5,,,,,Yes,No
+Flowers,Hellebores & Trilliums,Common Beargrass,Xerophyllum tenax,#N/A,"1,129",274,5,,SnFrB,5,,,,,,No
 Flowers,Hellebores & Trilliums,Fringed False Hellebore,Veratrum fimbriatum,2026-04-25,886,657,,,,,,,,,,No
 Flowers,Hellebores & Trilliums,Meadow Deathcamas,Toxicoscordion venenosum,#N/A,233,15,,,,,,,,,,No
 Flowers,Hellebores & Trilliums,Giant Purple Wakerobin,Trillium kurabayashii,#N/A,434,3,,,,,,,,,,No
@@ -534,7 +534,7 @@ Salamanders,Lungless Salamanders,Klamath Black Salamander,Aneides klamathensis,#
 Salamanders,Lungless Salamanders,Gregarious Slender Salamander,Batrachoseps gregarius,#N/A,264,0,,,,,,,,,,No
 Salamanders,Lungless Salamanders,Samwel Shasta Salamander,Hydromantes samweli,#N/A,144,0,,,,,,,,,,No
 Salamanders,Lungless Salamanders,Channel Islands Slender Salamander,Batrachoseps pacificus,#N/A,112,0,,,,,,,,,,No
-Salamanders,Lungless Salamanders,Mount Lyell Salamander,Hydromantes platycephalus,#N/A,110,0,,,SNE,6,,,,,,No
+Salamanders,Lungless Salamanders,Mount Lyell Salamander,Hydromantes platycephalus,#N/A,110,0,,,SNE,6,,,,,Yes,No
 Salamanders,Lungless Salamanders,Shasta Black Salamander,Aneides iecanus,#N/A,71,0,,,,,,,,,,No
 Salamanders,Lungless Salamanders,San Gabriel Slender Salamander,Batrachoseps gabrieli,#N/A,56,0,,,,,,,,,,No
 Salamanders,Lungless Salamanders,Siskiyou Mountains Salamander,Plethodon stormi,#N/A,45,0,,,,,,,,,,No
@@ -578,9 +578,9 @@ Flowers,Mariposa Lilies,Yellow Star-Tulip,Calochortus monophyllus,#N/A,"2,587",1
 Flowers,Mariposa Lilies,Weed's Mariposa Lily,Calochortus weedii,#N/A,"4,488",0,,San Diego,SCo,6,PR,6,,,,No
 Flowers,Mariposa Lilies,Catalina Mariposa Lily,Calochortus catalinae,#N/A,"3,842",0,,,TR,4,ChI,4,,,,No
 Flowers,Mariposa Lilies,Plummer's Mariposa Lily,Calochortus plummerae,#N/A,"2,414",0,,Hills near LA,TR,6,,,,,,No
-Flowers,Mariposa Lilies,Desert Mariposa Lily,Calochortus kennedyi,#N/A,"2,037",0,,Mojave/Colorado desert edge,DMoj,5,SNE,6,,,,No
+Flowers,Mariposa Lilies,Desert Mariposa Lily,Calochortus kennedyi,#N/A,"2,037",0,,Mojave/Colorado desert edge,DMoj,5,SNE,6,,,Yes,No
 Flowers,Mariposa Lilies,Late-blooming Mariposa Lily,Calochortus fimbriatus,#N/A,881,0,,,SCoR,7,TR,7,,,,No
-Flowers,Mariposa Lilies,Bruneau Mariposa Lily,Calochortus bruneaunis,#N/A,761,0,,,SNE,6,,,,,,No
+Flowers,Mariposa Lilies,Bruneau Mariposa Lily,Calochortus bruneaunis,#N/A,761,0,,,SNE,6,,,,,Yes,No
 Flowers,Mariposa Lilies,San Luis Mariposa Lily,Calochortus obispoensis,#N/A,713,0,,,,,,,,,,No
 Flowers,Mariposa Lilies,Goldenbowl Mariposa Lily,Calochortus concolor,#N/A,709,0,,,,,,,,,,No
 Flowers,Mariposa Lilies,Palmer's Mariposa Lily,Calochortus palmeri,#N/A,613,0,,,,,,,,,,No
@@ -593,7 +593,7 @@ Flowers,Mariposa Lilies,Beavertail-Grass,Calochortus coeruleus,#N/A,282,0,,,,,,,
 Flowers,Mariposa Lilies,La Panza Mariposa Lily,Calochortus simulans,#N/A,225,0,,,,,,,,,,No
 Flowers,Mariposa Lilies,Shirley Meadows Star-Tulip,Calochortus westonii,#N/A,174,0,,,,,,,,,,No
 Flowers,Mariposa Lilies,Cat's Ear,Calochortus elegans,#N/A,131,0,,,,,,,,,,No
-Flowers,Mariposa Lilies,Inyo Star-Tulip,Calochortus excavatus,#N/A,111,0,,,SNE,6,,,,,,No
+Flowers,Mariposa Lilies,Inyo Star-Tulip,Calochortus excavatus,#N/A,111,0,,,SNE,6,,,,,Yes,No
 Flowers,Mariposa Lilies,Siskiyou Mariposa Lily,Calochortus persistens,#N/A,106,0,,,,,,,,,,No
 Flowers,Mariposa Lilies,Winding Mariposa Lily,Calochortus flexuosus,#N/A,96,0,,,,,,,,,,No
 Flowers,Mariposa Lilies,Long-haired Star-Tulip,Calochortus longebarbatus,#N/A,55,0,,,,,,,,,,No
@@ -630,9 +630,9 @@ Mammals,Moles & Desmans,Coast Mole,Scapanus orarius,#N/A,33,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Orange Bush Monkeyflower,Diplacus aurantiacus,2023-04-23,"29,788","22,417",,,,,,,,,,No
 Flowers,Monkeyflowers,Seep Monkeyflower,Erythranthe guttata,2024-06-03,"8,576","3,578",,,,,,,,,,No
 Flowers,Monkeyflowers,Scarlet Monkeyflower,Erythranthe cardinalis,#N/A,"7,476","1,212",7,"Lake Anza, Mt Diablo",SnFrB,7,SNE,6,,,Yes,No
-Flowers,Monkeyflowers,Bigelow's Monkeyflower,Diplacus bigelovii,2025-05-18,"4,904",0,,,SNE,6,,,,,,No
+Flowers,Monkeyflowers,Bigelow's Monkeyflower,Diplacus bigelovii,2025-05-18,"4,904",0,,,SNE,6,,,,,Yes,No
 Flowers,Monkeyflowers,Purple Mouse Ears,Diplacus douglasii,#N/A,"1,333",811,3,Edgewood Park (Santa Cruz Mtns),SnFrB,3,,,,,,No
-Flowers,Monkeyflowers,Primrose Monkeyflower,Erythranthe primuloides,2025-08-06,"2,692",0,,,SNE,6,,,,,,No
+Flowers,Monkeyflowers,Primrose Monkeyflower,Erythranthe primuloides,2025-08-06,"2,692",0,,,SNE,6,,,,,Yes,No
 Flowers,Monkeyflowers,Shy Monkeyflower,Erythranthe nasuta,#N/A,"1,603",219,4,,SnFrB,4,,,,,,No
 Flowers,Monkeyflowers,Kellogg's Monkeyflower,Diplacus kelloggii,2026-03-08,"1,574",228,,,,,,,,,,No
 Flowers,Monkeyflowers,Musk Monkeyflower,Erythranthe moschata,2023-08-19,"1,486",0,,,,,,,,,,No
@@ -663,7 +663,7 @@ Flowers,Monkeyflowers,Torrey's Monkeyflower,Diplacus torreyi,#N/A,"2,012",0,,,,,
 Flowers,Monkeyflowers,Blushing Monkeyflower,Erythranthe erubescens,#N/A,"1,690",0,,,,,,,,,,No
 Flowers,Monkeyflowers,Rock Bush Monkeyflower,Diplacus calycinus,#N/A,"1,489",0,,,,,,,,,,No
 Flowers,Monkeyflowers,Brewer's Monkeyflower,Erythranthe breweri,#N/A,"1,135",0,,,,,,,,,,No
-Flowers,Monkeyflowers,Skunky Monkeyflower,Diplacus mephiticus,#N/A,"1,035",0,,,SNE,6,,,,,,No
+Flowers,Monkeyflowers,Skunky Monkeyflower,Diplacus mephiticus,#N/A,"1,035",0,,,SNE,6,,,,,Yes,No
 Flowers,Monkeyflowers,Coastal Monkeyflower,Erythranthe dentata,#N/A,920,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Yellow and White Monkeyflower,Erythranthe bicolor,#N/A,912,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Fremont's Monkeyflower,Diplacus fremontii,#N/A,864,0,,,,,,,,,,No
@@ -675,7 +675,7 @@ Flowers,Monkeyflowers,Sand-loving Monkeyflower,Erythranthe arenaria,#N/A,388,0,,
 Flowers,Monkeyflowers,Death Valley Monkeyflower,Diplacus rupicola,#N/A,375,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Harlequin Monkeyflower,Diplacus bicolor,#N/A,340,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Dudley's Monkeyflower,Erythranthe geniculata,#N/A,287,0,,,,,,,,,,No
-Flowers,Monkeyflowers,Miniature Monkeyflower,Erythranthe suksdorfii,#N/A,273,0,,,SNE,6,,,,,,No
+Flowers,Monkeyflowers,Miniature Monkeyflower,Erythranthe suksdorfii,#N/A,273,0,,,SNE,6,,,,,Yes,No
 Flowers,Monkeyflowers,Granite-crack Monkeyflower,Diplacus graniticola,#N/A,272,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Cut-leaved Monkeyflower,Erythranthe laciniata,#N/A,266,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Cleveland's Bush Monkeyflower,Diplacus clevelandii,#N/A,263,0,,,,,,,,,,No
@@ -694,13 +694,13 @@ Flowers,Monkeyflowers,Parish's Monkeyflower,Erythranthe parishii,#N/A,161,0,,,,,
 Flowers,Monkeyflowers,Slender Monkeyflower,Diplacus leptaleus,#N/A,155,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Slender-stemmed Monkeyflower,Erythranthe filicaulis,#N/A,140,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Kelso Creek Monkeyflower,Erythranthe shevockii,#N/A,139,0,,,,,,,,,,No
-Flowers,Monkeyflowers,Redstem Monkeyflower,Erythranthe rubella,#N/A,133,0,,,SNE,6,,,,,,No
+Flowers,Monkeyflowers,Redstem Monkeyflower,Erythranthe rubella,#N/A,133,0,,,SNE,6,,,,,Yes,No
 Flowers,Monkeyflowers,Stanislaus Monkeyflower,Erythranthe marmorata,#N/A,129,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Party-colored Monkeyflower,Erythranthe discolor,#N/A,127,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Jepson's Monkeyflower,Diplacus jepsonii,#N/A,122,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Santa Susana Monkeyflower,Diplacus rutilus,#N/A,114,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Low Bush Monkeyflower,Diplacus aridus,#N/A,99,0,,,,,,,,,,No
-Flowers,Monkeyflowers,Parry Monkeyflower,Diplacus parryi,#N/A,99,0,,,SNE,6,,,,,,No
+Flowers,Monkeyflowers,Parry Monkeyflower,Diplacus parryi,#N/A,99,0,,,SNE,6,,,,,Yes,No
 Flowers,Monkeyflowers,Irish Hills Monkeyflower,Erythranthe serpentinicola,#N/A,98,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Little Purple Monkeyflower,Erythranthe purpurea,#N/A,87,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Palmer's Monkeyflower,Erythranthe palmeri,#N/A,83,0,,,,,,,,,,No
@@ -727,14 +727,14 @@ Flowers,Monkeyflowers,Utah Monkeyflower,Erythranthe utahensis,#N/A,21,0,,,,,,,,,
 Flowers,Monkeyflowers,Tinytooter Monkeyflower,Erythranthe cordata,#N/A,20,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Willis’s Monkeyflower,Erythranthe willisii,#N/A,20,0,,,,,,,,,,No
 Flowers,Monkeyflowers,Erythranthe bergeri,Erythranthe bergeri,#N/A,19,0,,,,,,,,,,No
-Flowers,Monkeyflowers,Thompson's Monkeyflower,Diplacus thompsonii,#N/A,18,0,,,SNE,6,,,,,,No
+Flowers,Monkeyflowers,Thompson's Monkeyflower,Diplacus thompsonii,#N/A,18,0,,,SNE,6,,,,,Yes,No
 Flowers,Monkeyflowers,Egg Lake Monkeyflower,Diplacus pygmaeus,#N/A,10,0,,,,,,,,,,No
 Mammals,Mountain Beavers,Mountain Beaver,Aplodontia rufa,#N/A,36,1,,,,,,,,,,No
 Turtles,Mud & Musk Turtles,Eastern Musk Turtle,Sternotherus odoratus,#N/A,15,6,,,,,,,,,,No
 Mammals,Mustelids,Sea Otter,Enhydra lutris,2023-07-04,"11,204","2,333",,,,,,,,,,No
 Mammals,Mustelids,North American River Otter,Lontra canadensis,2023-05-17,"5,350","3,094",,,,,,,,,,No
-Mammals,Mustelids,Long-tailed Weasel,Neogale frenata,#N/A,"1,460",715,6,,SnFrB,6,,,,,Yes,No
-Mammals,Mustelids,American Badger,Taxidea taxus,#N/A,"1,131",455,6,,SnFrB,6,,,,,Yes,No
+Mammals,Mustelids,Long-tailed Weasel,Neogale frenata,#N/A,"1,460",715,6,,SnFrB,6,,,,,,No
+Mammals,Mustelids,American Badger,Taxidea taxus,#N/A,"1,131",455,6,,SnFrB,6,,,,,,No
 Mammals,Mustelids,American Mink,Neogale vison,2024-06-22,688,333,,,,,,,,,,No
 Mammals,Mustelids,Fisher,Pekania pennanti,#N/A,98,1,,,,,,,,,,No
 Mammals,Mustelids,Pacific Marten,Martes caurina,#N/A,132,0,,,,,,,,,,No
@@ -753,7 +753,7 @@ Damselflies,Narrow-winged,Desert Firetail,Telebasis salva,2024-09-10,496,158,,,,
 Damselflies,Narrow-winged,Swift Forktail,Ischnura erratica,#N/A,69,13,,,,,,,,,,No
 Damselflies,Narrow-winged,Aztec Dancer,Argia nahuana,#N/A,70,12,,,,,,,,,,No
 Damselflies,Narrow-winged,California Dancer,Argia agrioides,2025-05-31,372,106,8,,SnFrB,8,,,,,,No
-Damselflies,Narrow-winged,Western Red Damsel,Amphiagrion abbreviatum,#N/A,234,5,,,SNE,6,,,,,,No
+Damselflies,Narrow-winged,Western Red Damsel,Amphiagrion abbreviatum,#N/A,234,5,,,SNE,6,,,,,Yes,No
 Damselflies,Narrow-winged,Exclamation Damsel,Zoniagrion exclamationis,2026-05-09,293,277,5,,SnFrB,5,,,,,,No
 Damselflies,Narrow-winged,Desert Forktail,Ischnura barberi,#N/A,189,1,,,,,,,,,,No
 Damselflies,Narrow-winged,Boreal Bluet,Enallagma boreale,#N/A,29,1,,,,,,,,,,No
@@ -781,15 +781,15 @@ Lizards,Night Lizards,Island Night Lizard,Xantusia riversiana,#N/A,276,0,,,,,,,,
 Lizards,Night Lizards,Sandstone Night Lizard,Xantusia gracilis,#N/A,20,0,,,,,,,,,,No
 Lizards,Night Lizards,Baja California Night Lizard,Xantusia wigginsi,#N/A,12,0,,,,,,,,,,No
 Frogs & Toads,North American Spadefoots,Western Spadefoot,Spea hammondii,#N/A,"2,073",128,2,,SnFrB,2,,,,,,No
-Frogs & Toads,North American Spadefoots,Great Basin Spadefoot,Spea intermontana,#N/A,163,0,,,SNE,6,,,,,,No
+Frogs & Toads,North American Spadefoots,Great Basin Spadefoot,Spea intermontana,#N/A,163,0,,,SNE,6,,,,,Yes,No
 Frogs & Toads,North American Spadefoots,Couch's Spadefoot,Scaphiopus couchii,#N/A,28,0,,,,,,,,,,No
-Mammals,Oceanic Dolphins,Common Bottlenose Dolphin,Tursiops truncatus,2024-03-18,"3,381",475,,,,,,,,,Yes,No
-Mammals,Oceanic Dolphins,Common Dolphin,Delphinus delphis,2024-06-18,"1,549",47,,,,,,,,,Yes,No
-Mammals,Oceanic Dolphins,Risso's Dolphin,Grampus griseus,2024-08-31,"1,253",107,,,,,,,,,Yes,No
-Mammals,Oceanic Dolphins,Northern Right Whale Dolphin,Lissodelphis borealis,#N/A,109,57,,,,,,,,,Yes,Yes
-Mammals,Oceanic Dolphins,Orca,Orcinus orca,2025-08-24,552,84,,,,,,,,,Yes,No
-Mammals,Oceanic Dolphins,Pacific White-sided Dolphin,Aethalodelphis obliquidens,2023-09-16,404,185,,,,,,,,,Yes,No
-Mammals,Oceanic Dolphins,Striped Dolphin,Stenella coeruleoalba,#N/A,11,1,,,,,,,,,Yes,No
+Mammals,Oceanic Dolphins,Common Bottlenose Dolphin,Tursiops truncatus,2024-03-18,"3,381",475,,,,,,,,,,No
+Mammals,Oceanic Dolphins,Common Dolphin,Delphinus delphis,2024-06-18,"1,549",47,,,,,,,,,,No
+Mammals,Oceanic Dolphins,Risso's Dolphin,Grampus griseus,2024-08-31,"1,253",107,,,,,,,,,,No
+Mammals,Oceanic Dolphins,Northern Right Whale Dolphin,Lissodelphis borealis,#N/A,109,57,,,,,,,,,,Yes
+Mammals,Oceanic Dolphins,Orca,Orcinus orca,2025-08-24,552,84,,,,,,,,,,No
+Mammals,Oceanic Dolphins,Pacific White-sided Dolphin,Aethalodelphis obliquidens,2023-09-16,404,185,,,,,,,,,,No
+Mammals,Oceanic Dolphins,Striped Dolphin,Stenella coeruleoalba,#N/A,11,1,,,,,,,,,,No
 Mammals,Old World Mice & Rats,House Mouse,Mus musculus,#N/A,623,255,10,,SnFrB,10,,,,,,No
 Mammals,Old World Mice & Rats,Black Rat,Rattus rattus,2025-11-07,"1,430",445,,,,,,,,,,No
 Mammals,Old World Mice & Rats,Brown Rat,Rattus norvegicus,2024-09-09,645,389,,,,,,,,,,No
@@ -799,10 +799,10 @@ Flowers,Orchids,Spotted Coralroot,Corallorhiza maculata,2026-04-17,"4,934","2,13
 Flowers,Orchids,Fairy-Slipper,Calypso bulbosa,2026-03-14,"4,489","2,807",,,,,,,,,,No
 Flowers,Orchids,Flat Spurred Piperia,Platanthera transversa,#N/A,"1,466",940,6,"Lake Lagunitas, Mt Tam, China Camp",SnFrB,6,,,,,,No
 Flowers,Orchids,Western Rattlesnake Plantain,Goodyera oblongifolia,2024-08-03,"3,264",709,,,,,,,,,,No
-Flowers,Orchids,Pacific Coralroot,Corallorhiza mertensiana,#N/A,902,417,5,Salt Point ,SnFrB,5,,,,,Yes,No
+Flowers,Orchids,Pacific Coralroot,Corallorhiza mertensiana,#N/A,902,417,5,Salt Point ,SnFrB,5,,,,,,No
 Flowers,Orchids,Hooded Ladies' Tresses,Spiranthes romanzoffiana,#N/A,893,368,8,,SnFrB,8,,,,,,No
-Flowers,Orchids,Stream Orchid,Epipactis gigantea,2026-05-30,"2,760",302,5,,SnFrB,5,,,,,Yes,No
-Flowers,Orchids,White Bog Orchid,Platanthera dilatata,#N/A,"4,081",184,6,,SnFrB,6,SNE,6,,,,No
+Flowers,Orchids,Stream Orchid,Epipactis gigantea,2026-05-30,"2,760",302,5,,SnFrB,5,,,,,,No
+Flowers,Orchids,White Bog Orchid,Platanthera dilatata,#N/A,"4,081",184,6,,SnFrB,6,SNE,6,,,Yes,No
 Flowers,Orchids,Elegant Rein Orchid,Platanthera elegans,2024-08-09,"1,435","1,126",,,,,,,,,,No
 Flowers,Orchids,Michael's Rein Orchid,Platanthera michaelii,2026-06-06,324,152,5,,SnFrB,5,,,,,,No
 Flowers,Orchids,Striped Coralroot,Corallorhiza striata,2026-04-10,"1,202",861,,,,,,,,,,No
@@ -814,13 +814,13 @@ Flowers,Orchids,Denseflower Rein Orchid,Platanthera elongata,2025-07-05,618,363,
 Flowers,Orchids,Whiteflower Rein Orchid,Platanthera ephemerantha,#N/A,63,14,,,,,,,,,,No
 Flowers,Orchids,Alaska Rein Orchid,Platanthera unalascensis,#N/A,276,13,,,,,,,,,,No
 Flowers,Orchids,Yadon's Rein Orchid,Platanthera yadonii,#N/A,203,10,,,,,,,,,,No
-Flowers,Orchids,Sparse-flowered Bog Orchid,Platanthera sparsiflora,#N/A,729,0,,,SNE,6,,,,,,No
+Flowers,Orchids,Sparse-flowered Bog Orchid,Platanthera sparsiflora,#N/A,729,0,,,SNE,6,,,,,Yes,No
 Flowers,Orchids,Clustered Lady's Slipper,Cypripedium fasciculatum,2025-08-03,130,0,,,,,,,,,,No
 Flowers,Orchids,Heartleaf Twayblade,Neottia cordata,#N/A,176,0,,,,,,,,,,No
 Flowers,Orchids,Cooper's Rein Orchid,Platanthera cooperi,#N/A,173,0,,,,,,,,,,No
 Flowers,Orchids,Broad-lipped Twayblade,Neottia convallarioides,#N/A,159,0,,,,,,,,,,No
 Flowers,Orchids,Mountain Lady's-Slipper,Cypripedium montanum,#N/A,157,0,,,,,,,,,,No
-Flowers,Orchids,Great Basin Bog Orchid,Platanthera tescamnis,#N/A,119,0,,,SNE,6,,,,,,No
+Flowers,Orchids,Great Basin Bog Orchid,Platanthera tescamnis,#N/A,119,0,,,SNE,6,,,,,Yes,No
 Flowers,Orchids,Northwestern Twayblade,Neottia banksiana,#N/A,99,0,,,,,,,,,,No
 Flowers,Orchids,Coleman's Rein Orchid,Platanthera colemanii,#N/A,54,0,,,,,,,,,,No
 Flowers,Orchids,Languid Ladies'-Tresses,Spiranthes perexilis,#N/A,39,0,,,,,,,,,,No
@@ -837,13 +837,13 @@ Birds,Passerines,Juniper Titmouse,Baeolophus ridgwayi,#N/A,56,0,,,,,,,,,,No
 Dragonflies,Petaltails,Black Petaltail,Tanypteryx hageni,#N/A,270,6,,,,,,,,,,No
 Lizards,Phrynosomatid Lizards,Western Fence Lizard,Sceloporus occidentalis,2023-04-22,"166,753","44,285",,,,,,,,,,No
 Lizards,Phrynosomatid Lizards,Common Side-blotched Lizard,Uta stansburiana,2023-11-25,"47,647",195,,,,,,,,,,No
-Lizards,Phrynosomatid Lizards,Zebra-tailed Lizard,Callisaurus draconoides,2023-05-09,"4,145",0,,,SNE,6,,,,,,No
+Lizards,Phrynosomatid Lizards,Zebra-tailed Lizard,Callisaurus draconoides,2023-05-09,"4,145",0,,,SNE,6,,,,,Yes,No
 Lizards,Phrynosomatid Lizards,Common Sagebrush Lizard,Sceloporus graciosus,2025-05-10,"3,313",265,,,,,,,,,,No
 Lizards,Phrynosomatid Lizards,Blainville's Horned Lizard,Phrynosoma blainvillii,#N/A,"7,585",350,4,,SnFrB,4,,,,,,No
 Lizards,Phrynosomatid Lizards,Ornate Tree Lizard,Urosaurus ornatus,#N/A,76,1,,,,,,,,,,No
 Lizards,Phrynosomatid Lizards,Granite Spiny Lizard,Sceloporus orcutti,#N/A,"5,914",0,,Palm Springs/Riverside,,,,,,,,No
-Lizards,Phrynosomatid Lizards,Desert Spiny Lizard,Sceloporus magister,#N/A,"5,294",0,,,SNE,6,,,,,,No
-Lizards,Phrynosomatid Lizards,Desert Horned Lizard,Phrynosoma platyrhinos,#N/A,"3,565",0,,,SNE,6,,,,,,No
+Lizards,Phrynosomatid Lizards,Desert Spiny Lizard,Sceloporus magister,#N/A,"5,294",0,,,SNE,6,,,,,Yes,No
+Lizards,Phrynosomatid Lizards,Desert Horned Lizard,Phrynosoma platyrhinos,#N/A,"3,565",0,,,SNE,6,,,,,Yes,No
 Lizards,Phrynosomatid Lizards,Southern Sagebrush Lizard,Sceloporus vandenburgianus,#N/A,"3,397",0,,,,,,,,,,No
 Lizards,Phrynosomatid Lizards,Banded Rock Lizard,Petrosaurus mearnsi,#N/A,"1,209",0,,,,,,,,,,No
 Lizards,Phrynosomatid Lizards,Flat-tailed Horned Lizard,Phrynosoma mcallii,#N/A,836,0,,,,,,,,,,No
@@ -888,7 +888,7 @@ Mammals,Porpoises,Dall's Porpoise,Phocoenoides dalli,2025-08-24,60,39,,,,,,,,,,Y
 Mammals,Pronghorns,Pronghorn,Antilocapra americana,2024-04-07,800,1,,,,,,,,,,No
 Mammals,Raccoons & Coatis,Common Raccoon,Procyon lotor,2023-09-17,"18,027","6,896",,,,,,,,,,No
 Mammals,Raccoons & Coatis,Ringtail,Bassariscus astutus,#N/A,456,38,,,,,,,,,,No
-Birds,Raptors,Spotted Owl,Strix occidentalis,#N/A,659,319,"6,7",,SnFrB,"6,7",,,,,Yes,No
+Birds,Raptors,Spotted Owl,Strix occidentalis,#N/A,659,319,"6,7",,SnFrB,"6,7",,,,,,No
 Birds,Raptors,American Goshawk,Astur atricapillus,#N/A,164,0,,,,,,,,,,No
 Birds,Raptors,Great Gray Owl,Strix nebulosa,#N/A,128,0,,,,,,,,,,No
 Birds,Raptors,Flammulated Owl,Psiloscops flammeolus,#N/A,48,0,,,,,,,,,,No
@@ -919,7 +919,7 @@ Dragonflies,Skimmers,Widow Skimmer,Libellula luctuosa,2024-06-08,"1,964","1,125"
 Dragonflies,Skimmers,Black Saddlebags,Tramea lacerata,2024-06-14,"1,919",892,,,,,,,,,,No
 Dragonflies,Skimmers,Western Pondhawk,Erythemis collocata,2024-05-30,"1,917",683,,,,,,,,,,No
 Dragonflies,Skimmers,Neon Skimmer,Libellula croceipennis,2025-11-28,"1,702",1,,LA/San Diego,,,,,,,,No
-Dragonflies,Skimmers,Red Rock Skimmer,Paltothemis lineatipes,#N/A,"1,553",190,6,Sunol Regional Wilderness,SnFrB,6,,,,,Yes,No
+Dragonflies,Skimmers,Red Rock Skimmer,Paltothemis lineatipes,#N/A,"1,553",190,6,Sunol Regional Wilderness,SnFrB,6,,,,,,No
 Dragonflies,Skimmers,Eight-spotted Skimmer,Libellula forensis,2024-06-01,"1,386",695,,,,,,,,,,No
 Dragonflies,Skimmers,Twelve-spotted Skimmer,Libellula pulchella,2024-07-26,"1,365",330,,,,,,,,,,No
 Dragonflies,Skimmers,Red-veined Meadowhawk,Sympetrum madidum,#N/A,358,149,5,,SnFrB,5,,,,,,No
@@ -929,7 +929,7 @@ Dragonflies,Skimmers,Striped Meadowhawk,Sympetrum pallipes,2024-08-20,918,296,,,
 Dragonflies,Skimmers,Four-spotted Skimmer,Libellula quadrimaculata,2023-08-19,793,0,,,,,,,,,,No
 Dragonflies,Skimmers,Pale-faced Clubskimmer,Brechmorhoga mendax,#N/A,249,30,,,,,,,,,,No
 Dragonflies,Skimmers,Red Saddlebags,Tramea onusta,2024-06-24,563,46,,,,,,,,,,No
-Dragonflies,Skimmers,Hoary Skimmer,Libellula nodisticta,#N/A,192,2,,,SNE,6,,,,,,No
+Dragonflies,Skimmers,Hoary Skimmer,Libellula nodisticta,#N/A,192,2,,,SNE,6,,,,,Yes,No
 Dragonflies,Skimmers,Band-winged Meadowhawk,Sympetrum semicinctum,2025-06-22,289,12,,,,,,,,,,No
 Dragonflies,Skimmers,Roseate Skimmer,Orthemis ferruginea,2024-03-16,269,1,,,,,,,,,,No
 Dragonflies,Skimmers,Mexican Amberwing,Perithemis intensa,#N/A,"1,186",0,,,,,,,,,,No
@@ -960,16 +960,16 @@ Turtles,Softshell & Flapshell Turtles,Spiny Softshell,Apalone spinifera,#N/A,865
 Turtles,Softshell & Flapshell Turtles,Florida Softshell Turtle,Apalone ferox,#N/A,149,9,,,,,,,,,,No
 Moths,Sphinx Moths,White-lined Sphinx,Hyles lineata,2023-08-19,"23,367","2,933",,,,,,,,,,No
 Moths,Sphinx Moths,Carolina Sphinx,Manduca sexta,#N/A,"4,301",901,9,,SnFrB,9,,,,,,No
-Moths,Sphinx Moths,Western Eyed Sphinx,Smerinthus ophthalmica,#N/A,"1,569",464,8,,SnFrB,8,SNE,6,,,,No
+Moths,Sphinx Moths,Western Eyed Sphinx,Smerinthus ophthalmica,#N/A,"1,569",464,8,,SnFrB,8,SNE,6,,,Yes,No
 Moths,Sphinx Moths,Achemon Sphinx,Eumorpha achemon,#N/A,"1,124",395,8,,SnFrB,8,,,,,,No
 Moths,Sphinx Moths,Pacific Green Sphinx,Proserpinus lucidus,#N/A,906,157,1,,SnFrB,1,,,,,,No
 Moths,Sphinx Moths,Rocky Mountain Clearwing,Hemaris thetis,2024-06-06,922,155,,,,,,,,,,No
-Moths,Sphinx Moths,Elegant Sphinx,Sphinx perelegans,#N/A,812,86,7,,SnFrB,7,SNE,6,,,,No
+Moths,Sphinx Moths,Elegant Sphinx,Sphinx perelegans,#N/A,812,86,7,,SnFrB,7,SNE,6,,,Yes,No
 Moths,Sphinx Moths,Great Ash Sphinx,Sphinx chersis,#N/A,370,56,,,,,,,,,,No
 Moths,Sphinx Moths,Rustic Sphinx,Manduca rustica,2025-01-02,652,0,,,,,,,,,,No
 Moths,Sphinx Moths,Western Poplar Sphinx,Pachysphinx occidentalis,#N/A,261,14,,,,,,,,,,No
 Moths,Sphinx Moths,Ello Sphinx,Erinnyis ello,#N/A,93,6,,,,,,,,,,No
-Moths,Sphinx Moths,6,Manduca quinquemaculatus,#N/A,317,5,,,SNE,,,,,,,No
+Moths,Sphinx Moths,Five-spotted Hawk Moth,Manduca quinquemaculatus,#N/A,317,5,,,SNE,,,,,,Yes,No
 Moths,Sphinx Moths,Sequoia Sphinx,Sphinx sequoiae,#N/A,130,4,,,,,,,,,,No
 Moths,Sphinx Moths,Blinded Sphinx,Paonias excaecata,#N/A,16,4,,,,,,,,,,No
 Moths,Sphinx Moths,Clark's Sphinx,Proserpinus clarkiae,2025-04-18,296,108,,,,,,,,,,No
@@ -991,7 +991,7 @@ Butterflies,Spread-wing Skippers,Funereal Duskywing,Erynnis funeralis,2023-08-04
 Butterflies,Spread-wing Skippers,Propertius Duskywing,Erynnis propertius,2023-08-19,"3,263","1,445",,,,,,,,,,No
 Butterflies,Spread-wing Skippers,Northern White-Skipper,Heliopetes ericetorum,2025-06-15,"2,610",178,,,,,,,,,,No
 Butterflies,Spread-wing Skippers,White Checkered-Skipper,Burnsius albezens,2023-11-25,"2,270",0,,,,,,,,,,No
-Butterflies,Spread-wing Skippers,Common Sootywing,Pholisora catullus,#N/A,191,126,8,,SnFrB,8,SNE,6,,,,No
+Butterflies,Spread-wing Skippers,Common Sootywing,Pholisora catullus,#N/A,191,126,8,,SnFrB,8,SNE,6,,,Yes,No
 Butterflies,Spread-wing Skippers,Small Checkered-Skipper,Pyrgus scriptura,#N/A,167,54,,,,,,,,,,No
 Butterflies,Spread-wing Skippers,Sleepy Duskywing,Erynnis brizo,#N/A,205,29,,,,,,,,,,No
 Butterflies,Spread-wing Skippers,Two-banded Checkered-Skipper,Pyrgus ruralis,2023-08-05,580,288,,,,,,,,,,No
@@ -1017,7 +1017,7 @@ Mammals,Squirrels,Common Golden-mantled Ground Squirrel,Callospermophilus latera
 Mammals,Squirrels,Douglas's Squirrel,Tamiasciurus douglasii,2023-08-19,"3,734",59,,,,,,,,,,No
 Mammals,Squirrels,White-tailed Antelope Squirrel,Ammospermophilus leucurus,2025-05-18,"3,666",0,,Mojave/Colorado desert,,,,,,,,No
 Mammals,Squirrels,Douglas's Ground Squirrel,Otospermophilus douglasii,2024-09-14,"3,137","1,485",,,,,,,,,,No
-Mammals,Squirrels,Yellow-bellied Marmot,Marmota flaviventris,2025-05-21,"3,109",7,,Sierras/Eastern Sierras,SNE,6,,,,,,No
+Mammals,Squirrels,Yellow-bellied Marmot,Marmota flaviventris,2025-05-21,"3,109",7,,Sierras/Eastern Sierras,SNE,6,,,,,Yes,No
 Mammals,Squirrels,Merriam's Chipmunk,Neotamias merriami,2024-06-14,"2,791","1,147",,,,,,,,,,No
 Mammals,Squirrels,Belding's Ground Squirrel,Urocitellus beldingi,2023-08-05,981,0,,,,,,,,,,No
 Mammals,Squirrels,Sonoma Chipmunk,Neotamias sonomae,2024-07-06,973,929,,,,,,,,,,No
@@ -1051,16 +1051,16 @@ Frogs & Toads,Tailed Frogs,Coastal Tailed Frog,Ascaphus truei,#N/A,323,0,,,,,,,,
 Flowers,Threadplants,Mountain Threadplant,Nemacladus montanus,#N/A,61,52,5,Del Puerto Canyon Rd,SnFrB,5,,,,,,No
 Flowers,Threadplants,Glandular Threadplant,Nemacladus glanduliferus,#N/A,415,0,,,,,,,,,,No
 Flowers,Threadplants,Desert Threadplant,Nemacladus rubescens,#N/A,295,0,,,,,,,,,,No
-Flowers,Threadplants,Redtip Threadplant,Nemacladus orientalis,#N/A,262,0,,,SNE,6,,,,,,No
+Flowers,Threadplants,Redtip Threadplant,Nemacladus orientalis,#N/A,262,0,,,SNE,6,,,,,Yes,No
 Flowers,Threadplants,Desert Nemacladus,Nemacladus tenuis,#N/A,189,0,,,,,,,,,,No
 Flowers,Threadplants,Inyo Threadplant,Nemacladus sigmoideus,#N/A,185,0,,,,,,,,,,No
 Flowers,Threadplants,Short-Flowered Threadplant,Nemacladus breviflorus,#N/A,165,0,,,,,,,,,,No
 Flowers,Threadplants,Onesided Threadplant,Nemacladus secundiflorus,#N/A,138,0,,,,,,,,,,No
 Flowers,Threadplants,Long-flowered Nemacladus,Nemacladus longiflorus,#N/A,118,0,,,,,,,,,,No
-Flowers,Threadplants,White Mountains Threadplant,Nemacladus morefieldii,#N/A,113,0,,,SNE,6,,,,,,No
-Flowers,Threadplants,Badger Flat Threadplant,Nemacladus inyoensis,#N/A,102,0,,,SNE,6,,,,,,No
+Flowers,Threadplants,White Mountains Threadplant,Nemacladus morefieldii,#N/A,113,0,,,SNE,6,,,,,Yes,No
+Flowers,Threadplants,Badger Flat Threadplant,Nemacladus inyoensis,#N/A,102,0,,,SNE,6,,,,,Yes,No
 Flowers,Threadplants,Nuttall's Threadplant,Nemacladus ramosissimus,#N/A,90,0,,,,,,,,,,No
-Flowers,Threadplants,Owens Valley Threadplant,Nemacladus matsonii,#N/A,70,0,,,SNE,6,,,,,,No
+Flowers,Threadplants,Owens Valley Threadplant,Nemacladus matsonii,#N/A,70,0,,,SNE,6,,,,,Yes,No
 Flowers,Threadplants,Combleaf Threadplant,Nemacladus pinnatifidus,#N/A,65,0,,,,,,,,,,No
 Flowers,Threadplants,Eastwood's Threadplant,Nemacladus eastwoodiae,#N/A,63,0,,,,,,,,,,No
 Flowers,Threadplants,Nemacladus parikhiae,Nemacladus parikhiae,#N/A,46,0,,,,,,,,,,No
@@ -1082,14 +1082,14 @@ Frogs & Toads,Tree Frogs & Allies,California Tree Frog,Pseudacris cadaverina,#N/
 Flowers,True Lilies,Checker Lily,Fritillaria affinis,2025-03-21,"12,163","10,699",,,,,,,,,,No
 Flowers,True Lilies,Andrews' Clintonia,Clintonia andrewsiana,2026-04-23,"5,964","3,890",,"Oak Hills (Reinhardt/Chabot), Marin",,,,,,,,No
 Flowers,True Lilies,Fragrant Fritillary,Fritillaria liliacea,#N/A,"1,347","1,342",3,,SnFrB,3,,,,,,No
-Flowers,True Lilies,Leopard Lily,Lilium pardalinum,#N/A,"2,221","1,019",6,,SnFrB,6,,,,,Yes,No
+Flowers,True Lilies,Leopard Lily,Lilium pardalinum,#N/A,"2,221","1,019",6,,SnFrB,6,,,,,,No
 Flowers,True Lilies,Scarlet Fritillary,Fritillaria recurva,#N/A,"2,021",921,3,,SnFrB,3,,,,,,No
 Flowers,True Lilies,Chocolate Lily,Fritillaria biflora,2025-03-21,"2,776",8,,,,,,,,,,No
 Flowers,True Lilies,Humboldt's Lily,Lilium humboldtii,2025-05-31,"2,520",0,,"Nevada City, South Coast hills",,,,,,,,No
 Flowers,True Lilies,Napa Fawn Lily,Erythronium helenae,#N/A,409,408,4,,SnFrB,4,,,,,,No
 Flowers,True Lilies,Purdy's Fritillary,Fritillaria purdyi,#N/A,705,283,4,,SnFrB,4,,,,,,No
 Flowers,True Lilies,Sierra Tiger Lily,Lilium parvum,2023-08-19,"1,719",0,,,,,,,,,,No
-Flowers,True Lilies,Coast Lily,Lilium maritimum,#N/A,332,232,6,Mendocino,SnFrB,6,,,,,Yes,No
+Flowers,True Lilies,Coast Lily,Lilium maritimum,#N/A,332,232,6,Mendocino,SnFrB,6,,,,,,No
 Flowers,True Lilies,Redwood Lily,Lilium rubescens,#N/A,490,172,6,,SnFrB,6,,,,,,No
 Flowers,True Lilies,Stinkbells,Fritillaria agrestis,#N/A,398,170,3,,SnFrB,3,,,,,,No
 Flowers,True Lilies,California Fawn Lily,Erythronium californicum,#N/A,684,166,3,,SnFrB,3,,,,,,No
@@ -1134,10 +1134,10 @@ Butterflies,True Metalmarks,Palmer's Metalmark,Apodemia palmerii,#N/A,24,0,,,,,,
 Mammals,True Sperm Whales,Sperm Whale,Physeter macrocephalus,#N/A,26,21,,,,,,,,,,Yes
 Frogs & Toads,True Toads,Western Toad,Anaxyrus boreas,2025-05-28,"21,247","4,419",,Patrick Hannah Grove Picnic Area,,,,,,,,No
 Frogs & Toads,True Toads,Red-spotted Toad,Anaxyrus punctatus,2023-11-25,"1,364",0,,,,,,,,,,No
-Frogs & Toads,True Toads,Yosemite Toad,Anaxyrus canorus,#N/A,567,0,,,SNE,6,,,,,,No
+Frogs & Toads,True Toads,Yosemite Toad,Anaxyrus canorus,#N/A,567,0,,,SNE,6,,,,,Yes,No
 Frogs & Toads,True Toads,Arroyo Toad,Anaxyrus californicus,#N/A,376,0,,,,,,,,,,No
 Frogs & Toads,True Toads,Woodhouse's Toad,Anaxyrus woodhousii,#N/A,253,0,,,,,,,,,,No
-Frogs & Toads,True Toads,Black Toad,Anaxyrus exsul,#N/A,199,0,,,SNE,6,,,,,,No
+Frogs & Toads,True Toads,Black Toad,Anaxyrus exsul,#N/A,199,0,,,SNE,6,,,,,Yes,No
 Frogs & Toads,True Toads,Great Plains Toad,Anaxyrus cognatus,#N/A,26,0,,,,,,,,,,No
 Mammals,Typical Bears,American Black Bear,Ursus americanus,2024-09-22,"8,743",282,,,,,,,,,,No
 Snakes,Typical Blind Snakes,Brahminy Blindsnake,Indotyphlops braminus,#N/A,427,0,,,,,,,,,,No
@@ -1183,7 +1183,7 @@ Snakes,Vipers,Southwestern Speckled Rattlesnake,Crotalus pyrrhus,#N/A,"2,844",0,
 Snakes,Vipers,Sidewinder,Crotalus cerastes,#N/A,"2,487",0,,,,,,,,,,No
 Snakes,Vipers,Western Diamond-backed Rattlesnake,Crotalus atrox,2022-05-01,216,0,,,,,,,,,,No
 Snakes,Vipers,Mojave Rattlesnake,Crotalus scutulatus,#N/A,"1,037",0,,,,,,,,,,No
-Snakes,Vipers,Panamint Rattlesnake,Crotalus stephensi,#N/A,461,0,,,SNE,6,,,,,,No
+Snakes,Vipers,Panamint Rattlesnake,Crotalus stephensi,#N/A,461,0,,,SNE,6,,,,,Yes,No
 Mammals,Voles & Muskrats,California Vole,Microtus californicus,2023-07-29,"1,878","1,268",,,,,,,,,,No
 Mammals,Voles & Muskrats,Muskrat,Ondatra zibethicus,2024-07-02,856,503,,,,,,,,,,No
 Mammals,Voles & Muskrats,Sonoma Tree Vole,Arborimus pomo,#N/A,62,9,,,,,,,,,,No
@@ -1206,7 +1206,7 @@ Butterflies,Whites,Cabbage White,Pieris rapae,2023-07-27,"18,948","7,319",,,,,,,
 Butterflies,Whites,Checkered White,Pontia protodice,2023-07-28,"7,038",844,,,,,,,,,,No
 Butterflies,Whites,Sara Orangetip,Anthocharis sara,2023-08-05,"5,199","1,155",,,,,,,,,,No
 Butterflies,Whites,Margined White,Pieris marginalis,2025-04-18,"2,903","2,215",,,,,,,,,,No
-Butterflies,Whites,Spring White,Pontia sisymbrii,#N/A,403,80,5,,SnFrB,5,SNE,6,,,,No
+Butterflies,Whites,Spring White,Pontia sisymbrii,#N/A,403,80,5,,SnFrB,5,SNE,6,,,Yes,No
 Butterflies,Whites,Large Marble,Euchloe ausonides,2024-04-01,660,489,,,,,,,,,,No
 Butterflies,Whites,California Marble,Euchloe hyantis,#N/A,107,32,,,,,,,,,,No
 Butterflies,Whites,Pine White,Neophasia menapia,2023-08-19,587,55,,,,,,,,,,No
