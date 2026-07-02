@@ -104,6 +104,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 .face-back { transform: rotateY(180deg); }
 
 /* Photo */
+.tp-star { position:absolute; top:5px; left:6px; font-size:16px; color:#fff; opacity:.30; line-height:1; pointer-events:none; z-index:2; }
 .tp { flex-shrink: 0; width: 90px; height: 90px; overflow: hidden;
   background: var(--c1); position: relative; display: flex; align-items: center; justify-content: center; }
 .tp img { width: 100%; height: 100%; object-fit: cover; display: block; }
@@ -111,14 +112,11 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
 /* Front right */
 .tright { flex: 1; min-width: 0; display: flex; flex-direction: column; background: var(--c2); height: 90px; }
-.thdr { flex: 1; padding: 11px 6px 6px 12px; display: flex; flex-direction: row;
-  align-items: flex-start; min-width: 0; gap: 0; }
-.thdr-text { flex:1; min-width:0; display:flex; flex-direction:column; }
-.tile-badge-wrap { display:flex; align-items:center; gap:3px; align-self:flex-start; padding:8px 8px 0 0; flex-shrink:0; }
-.tile-star { font-size:17px; line-height:1; color:var(--c1); }
-.tob { width: 22px; height: 22px; border-radius: 50%; display: flex; align-items: center;
-  justify-content: center; font-size: 11px; font-weight: 700; cursor: pointer;
-  transition: all .15s; user-select: none; flex-shrink: 0; }
+.thdr { position: relative; flex: 1; padding: 11px 30px 6px 12px;
+  display: flex; flex-direction: column; justify-content: flex-start; min-width: 0; }
+.tob { position: absolute; top: 9px; right: 8px; width: 22px; height: 22px;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700; cursor: pointer; transition: all .15s; user-select: none; }
 .tcl { font-size: 8px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
   opacity: .65; color: var(--cd); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; line-height: 1; }
 .tn  { font-size: 14px; font-weight: 600; font-family: Georgia, serif; color: var(--cd);
@@ -140,7 +138,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
 /* Back face */
 .tback-body { flex: 1; display: flex; flex-direction: column; }
-.tb-hdr { display:flex; align-items:flex-start; gap:0; padding: 10px 8px 10px 12px; }
+.tb-hdr { display:flex; align-items:center; gap:5px; padding: 11px 30px 10px 12px; position:relative; }
 .tb-name { font-size: 14px; font-weight: 600; font-family: Georgia, serif;
   color: var(--cd); flex: 1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .tb-notes { font-size: 10px; line-height: 1.5; color: var(--cd); }
@@ -549,21 +547,17 @@ function makeTile(d) {
   var frontHTML =
     '<div style="display:flex;height:90px;">'+
       '<div class="tp">'+
+        (d.star ? '<div class="tp-star">&#9733;</div>' : '')+
         '<img src="photos/'+slug+'.jpg" style="display:block" onerror="this.style.display=\'none\';this.nextSibling.style.display=\'flex\';tryNextExt(this,\'' + slug + '\',[\' png\',\'webp\'])">'+
         '<div class="tpp" style="display:none;">'+ini+'</div>'+
       '</div>'+
       '<div class="tright">'+
         '<div class="thdr">'+
-          '<div class="thdr-text">'+
-            '<div class="tcl">'+catline+'</div>'+
-            '<div class="tn">'+abbrevName(d.name,28)+'</div>'+
-            '<div class="ts">'+d.sci+'</div>'+
-            pillsHTML+
-          '</div>'+
-          '<div class="tile-badge-wrap">'+
-            (d.star ? '<div class="tile-star">&#9733;</div>' : '')+
-            '<div class="tob" style="'+obStyle+'" data-name="'+d.name+'">'+obTxt+'</div>'+
-          '</div>'+
+          '<div class="tob" style="'+obStyle+'" data-name="'+d.name+'">'+obTxt+'</div>'+
+          '<div class="tcl">'+catline+'</div>'+
+          '<div class="tn">'+abbrevName(d.name,28)+'</div>'+
+          '<div class="ts">'+d.sci+'</div>'+
+          pillsHTML+
         '</div>'+
       '</div>'+
     '</div>'+
@@ -574,10 +568,7 @@ function makeTile(d) {
     '<div class="tback-body">'+
       '<div class="tb-hdr" style="background:var(--c2);">'+
         '<span class="tb-name">'+d.name+'</span>'+
-        '<div class="tile-badge-wrap" style="padding:0 0 0 4px;">'+
-          (d.star ? '<div class="tile-star">&#9733;</div>' : '')+
-          '<div class="tob" style="'+obStyle+'" data-name="'+d.name+'">'+obTxt+'</div>'+
-        '</div>'+
+        '<div class="tob" style="'+obStyle+'" data-name="'+d.name+'">'+obTxt+'</div>'+
       '</div>'+
       '<div style="flex:1;background:var(--c3);padding:8px 12px;">'+
         (d.notes ? '<div class="tb-notes">'+d.notes+'</div>' : '')+
