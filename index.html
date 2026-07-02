@@ -47,7 +47,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
 /* ── TOOLBAR ── */
 .toolbar { background: var(--white); border-bottom: 1px solid var(--border); flex-shrink: 0; }
-.trow { display: flex; flex-wrap: wrap; gap: 7px; align-items: center;
+.trow { display: flex; flex-wrap: nowrap; gap: 7px; align-items: flex-start;
   padding: 7px 22px; border-bottom: 1px solid var(--border); }
 .trow:last-child { border-bottom: none; }
 .fl { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .07em;
@@ -79,7 +79,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 .num-input:focus { border-color: #A8947E; }
 .incl-mar { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--ink-mid); cursor: pointer; }
 .incl-mar input { accent-color: #A8947E; }
-.cscroll { display: flex; flex-wrap: wrap; gap: 6px; }
+.cscroll { display: flex; flex-wrap: wrap; gap: 6px; flex: 1; }
 
 /* ── RBAR ── */
 .rbar { padding: 5px 22px; font-size: 11px; color: var(--ink-light);
@@ -159,7 +159,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
 <div class="toolbar">
   <!-- Row 1: search, status, sort, bay min, marine -->
-  <div class="trow">
+  <div class="trow" style="flex-wrap:wrap;align-items:center;">
     <div class="sw">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
         <circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/>
@@ -197,7 +197,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     </div>
   </div>
   <!-- Row 4: peak month -->
-  <div class="trow">
+  <div class="trow" style="flex-wrap:wrap;align-items:flex-start;">
     <span class="fl" style="width:68px;flex-shrink:0;">Month</span>
     <div class="cscroll" id="month-chips">
       <button class="chip on" data-m="0"  onclick="toggleMonth(this)">Any</button>
@@ -218,7 +218,7 @@ body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   </div>
   <!-- Row 5: regions -->
   <div class="trow">
-    <span class="fl" style="width:68px;flex-shrink:0;">Regions</span>
+    <span class="fl" style="width:68px;flex-shrink:0;">Region</span>
     <div class="cscroll" id="reg-chips">
       <button class="chip on" id="reg-all" onclick="selectAllRegions()">All</button>
       <button class="chip reg-chip" data-code="NCo" style="background:#3f736e;border-color:#3f736e;color:#fff;" onclick="toggleRegion(this)">NCo</button>
