@@ -528,7 +528,7 @@ function makeTile(d) {
     var mi = i+1;
     var bg, fw;
     if (d.peak.indexOf(mi) >= 0)      { bg=pkColor; fw='700'; }
-    else if (d.shoulders.indexOf(mi)>=0){ bg=shColor; fw='600'; }
+    else if (d.shoulders.indexOf(mi)>=0){ bg=shColor; fw='400'; }
     else                               { bg='transparent'; fw='400'; }
     return '<div class="tmon" style="font-weight:'+fw+';background:'+bg+';color:var(--cd);">'+m+'</div>';
   }).join('');
