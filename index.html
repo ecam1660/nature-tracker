@@ -523,7 +523,7 @@ function makeTile(d) {
 
   // Month grid
   var pkColor = blend(cc.c2, cc.c3, 0.50);
-  var shColor = blend(cc.c2, cc.c3, 0.35);
+  var shColor = blend(cc.c2, cc.c3, 0.30);
   var gridHTML = MONTHS.map(function(m, i) {
     var mi = i+1;
     var bg, fw;
@@ -560,7 +560,7 @@ function makeTile(d) {
         '<div class="thdr">'+
           '<div class="tob" style="'+obStyle+'" data-name="'+d.name+'">'+obTxt+'</div>'+
           '<div class="tcl">'+catline+'</div>'+
-          '<div class="tn">'+abbrevName(d.name,28)+'</div>'+
+          '<div class="tn">'+abbrevName(d.name,25)+'</div>'+
           '<div class="ts">'+d.sci+'</div>'+
           pillsHTML+
         '</div>'+
