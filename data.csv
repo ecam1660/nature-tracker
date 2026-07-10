@@ -425,7 +425,7 @@ Moths,Sphinx Moths,Elegant Sphinx,Sphinx perelegans,#N/A,812,86,7,6,5,,SNE,7,SCo
 Mammals,Oceanic Dolphins,Common Dolphin,Delphinus delphis,2024-06-18,"1,549",47,,,,,,,,,,,,No
 Flowers,Clarkia,Diamond Clarkia,Clarkia rhomboidea,2026-06-10,"2,930",46,,,,,,,,,,,,No
 Butterflies,Blues,Western Tailed-Blue,Cupido amyntula,2024-06-18,958,46,,,,,,,,,,,,No
-Dragonflies,Skimmers,Red Saddlebags,Tramea onusta,2024-06-24,563,46,7,6,8,,SCo,,TR,,DSon,,,No
+Dragonflies,Skimmers,Red Saddlebags,Tramea onusta,#N/A,563,46,7,6,8,,SCo,,TR,,DSon,,,No
 Butterflies,True Metalmarks,Fatal Metalmark,Calephelis nemesis,#N/A,809,0,7,9,10,,SCo,,TR,,DSon,,,No
 Flowers,Beardtongues,Hot Rock Penstemon,Penstemon deustus,#N/A,791,0,6,7,5,,KR,,SNH,,,,,No
 Salamanders,Lungless,Del Norte Salamander,Plethodon elongatus,#N/A,773,0,3,12,4,,KR,,NCoR,,,,,No
@@ -507,7 +507,7 @@ Snakes,Colubrid Snakes,California Lyresnake,Trimorphodon lyrophanes,#N/A,531,0,5
 Flowers,Violets,Beckwith's Violet,Viola beckwithii,#N/A,530,0,4,5,3,,MP,,SNH,,CaR,,,No
 Flowers,True Lilies,Adobe Lily,Fritillaria pluriflora,#N/A,522,96,3,2,4,,GV,3,,,,,,No
 Nudibranchs,Aglajidae,California Aglaja,Navanax inermis,2025-11-27,4786,8,,,,,,,,,,,,Yes
-Flowers,True Lilies,Chocolate Lily,Fritillaria biflora,2025-03-21,"2,776",8,3,2,4,,SCoR,,PR,,,,,No
+Flowers,True Lilies,Chocolate Lily,Fritillaria biflora,#N/A,"2,776",8,3,2,4,,SCoR,,PR,,,,,No
 Frogs & Toads,Typical Frogs,Sierra Nevada Yellow-legged Frog,Rana sierrae,#N/A,521,0,7,8,9,,SNH,,SNE,,,,,No
 Butterflies,Skipperlings,Western Arctic Skipper,Carterocephalus skada,2024-07-18,63,8,,,,,,,,,,,,No
 Mammals,Squirrels,Yellow-bellied Marmot,Marmota flaviventris,2025-05-21,"3,109",7,,,,Sierras/Eastern Sierras,SNE,6,,,,,,No
@@ -592,7 +592,7 @@ Lizards,Whiptails & Tegus,Sonoran Spotted Whiptail,Aspidoscelis sonorae,#N/A,328
 Mammals,Kangaroo Rats,Merriam's Kangaroo Rat,Dipodomys merriami,#N/A,325,0,4,3,5,,PR,,DSon,,DMoj,,,No
 Frogs & Toads,Tailed Frogs,Coastal Tailed Frog,Ascaphus truei,#N/A,323,0,9,4,7,,NCo,,KR,,NCoR,,,No
 Mammals,Kangaroo Rats,Desert Kangaroo Rat,Dipodomys deserti,#N/A,321,0,3,"12,1,2,4",,,DSon,,,,,,,No
-Lizards,Phrynosomatid Lizards,Desert Spiny Lizard,Sceloporus magister,2026-06-11,"5,294",0,5,4,6,,SNE,6,,,,,,No
+Lizards,Phrynosomatid Lizards,Desert Spiny Lizard,Sceloporus magister,2026-06-11,"5,294",0,,,,,SNE,6,,,,,,No
 Flowers,Beardtongues,Slender Beardtongue,Penstemon gracilentus,#N/A,321,0,7,8,6,,SNH,,CaR,,,,,No
 Flowers,Mariposa Lilies,Leichtlin's Mariposa Lily,Calochortus leichtlinii,2023-08-06,"6,460",0,,,,,,,,,,,,No
 Flowers,Trilliums,Corn Lily,Veratrum californicum,2023-08-06,"6,384",0,,,,,,,,,,,,No
