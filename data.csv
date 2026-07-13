@@ -360,7 +360,7 @@ Dragonflies,Emerald Dragonflies,Beaverpond Baskettail,Epitheca canis,2026-04-26,
 Flowers,Mariposa Lilies,Splendid Mariposa Lily,Calochortus splendens,2026-05-30,"7,864",112,,,,,,6,,,,,,No
 Flowers,Clarkia,Twolobe Clarkia,Clarkia biloba,2026-06-06,476,110,,,,,,6,,,,,,No
 Mammals,Mustelids,American Badger,Taxidea taxus,#N/A,"1,131",455,6,"3,4,5,7,8",,,GV,6,SCoR,,,,Yes,No
-Flowers,Trilliums,Common Beargrass,Xerophyllum tenax,#N/A,"1,129",274,6,5,7,,KR,5,NCoR,,CaR,,,No
+Flowers,Trilliums,Common Beargrass,Xerophyllum tenax,2026-07-11,"1,129",274,6,5,7,,KR,5,NCoR,,CaR,,,No
 Moths,Sphinx Moths,Clark's Sphinx,Proserpinus clarkiae,2025-04-18,296,108,,,,,,,,,,,,No
 Mammals,Oceanic Dolphins,Risso's Dolphin,Grampus griseus,2024-08-31,"1,253",107,,,,,,,,,,,,No
 Mammals,Hares & Rabbits,European Rabbit,Oryctolagus cuniculus,2023-08-31,321,107,,,,,,,,,,,,No
@@ -405,7 +405,7 @@ Flowers,Beardtongues,San Gabriel Beardtongue,Penstemon labrosus,#N/A,917,0,7,6,8
 Mammals,Canids,Red Fox,Vulpes vulpes,#N/A,915,465,5,7,1,,GV,5,,,,,,No
 Flowers,Monkeyflowers,Yellow and White Monkeyflower,Erythranthe bicolor,#N/A,912,0,5,6,4,,SNF,,NCoR,,CaR,,,No
 Moths,Sphinx Moths,Pacific Green Sphinx,Proserpinus lucidus,#N/A,906,157,1,2,12,,SCoR,1,PR,,,,,No
-Flowers,Orchids,Pacific Coralroot,Corallorhiza mertensiana,#N/A,902,417,6,7,5,Salt Point ,KR,5,NCoR,,NCo,,,No
+Flowers,Orchids,Pacific Coralroot,Corallorhiza mertensiana,2026-07-11,902,417,6,7,5,Salt Point ,KR,5,NCoR,,NCo,,,No
 Flowers,True Lilies,Kelley's Lily,Lilium kelleyanum,#N/A,902,0,7,8,6,Mammoth Lakes,SNH,,,,,,,No
 Flowers,Orchids,Hooded Ladies' Tresses,Spiranthes romanzoffiana,#N/A,893,368,8,7,,,SNH,8,CCo,,CaR,,,No
 Flowers,True Lilies,Lemon Lily,Lilium parryi,#N/A,886,0,7,6,8,,TR,,,,,,,No
@@ -708,7 +708,7 @@ Butterflies,Spread-wing Skippers,Pacuvius Duskywing,Erynnis pacuvius,#N/A,201,0,
 Butterflies,Yellows & Sulphurs,Sierra Sulphur,Colias behrii,#N/A,200,0,7,,,,SNH,,,,,,,No
 Flowers,Monkeyflowers,Dwarf Purple Monkeyflower,Diplacus nanus,#N/A,200,0,6,5,7,,NCoR,,KR,,SNE,,,No
 Frogs & Toads,True Toads,Black Toad,Anaxyrus exsul,#N/A,199,0,4,,,,SNE,6,,,,,,No
-Birds,Water & Shorebirds,Leach's Storm-Petrel,Hydrobates leucorhous,#N/A,197,10,"7,8,9,10",,,,SCo,,,,,,,No
+Birds,Water & Shorebirds,Leach's Storm-Petrel,Hydrobates leucorhous,#N/A,197,10,"7,8,9,10",,,,SCo,,CCo,,,,,No
 Moths,Sphinx Moths,Pink-spotted Hawkmoth,Agrius cingulata,#N/A,197,0,10,9,8,,SCo,,,,,,,No
 Butterflies,Hairstreaks,Muir's Hairstreak,Callophrys muiri,#N/A,196,187,5,4,6,Look for Sargent Cypress groves on Mt Tam,SCoR,5,,,,,,No
 Flowers,Beardtongues,Mojave Beardtongue,Penstemon incertus,#N/A,195,0,5,6,4,Lone Pine area,SNE,,,,,,,No
@@ -735,7 +735,7 @@ Flowers,Monkeyflowers,Montia-like Monkeyflower,Erythranthe montioides,#N/A,175,0
 Damselflies,Narrow-winged,Lavender Dancer,Argia hinei,#N/A,174,0,7,6,8,,PR,,TR,,,,,No
 Flowers,Mariposa Lilies,Shirley Meadows Star-Tulip,Calochortus westonii,#N/A,174,0,5,6,,,SNH,,SNF,,,,,No
 Flowers,Orchids,Cooper's Rein Orchid,Platanthera cooperi,#N/A,173,0,4,5,6,,ChI,,PR,,,,,No
-Birds,Water & Shorebirds,Craveri's Murrelet,Synthliboramphus craveri,#N/A,169,3,"7,8,9,10",,,,SCo,,,,,,,No
+Birds,Water & Shorebirds,Craveri's Murrelet,Synthliboramphus craveri,#N/A,169,3,"7,8,9,10",,,,SCo,,CCo,,,,,No
 Flowers,Larkspurs,Swamp Larkspur,Delphinium uliginosum,#N/A,168,124,5,4,6,McLaughlin Natural Reserve (North Bay),,,,,,,,No
 Flowers,Larkspurs,Rose-flowered Larkspur,Delphinium purpusii,#N/A,168,0,4,5,3,,SNH,,SNF,,,,,No
 Butterflies,Spread-wing Skippers,Small Checkered-Skipper,Pyrgus scriptura,#N/A,167,54,6,4,8,,TR,,DSon,,DMoj,,,No
@@ -876,7 +876,7 @@ Mammals,Shrews,Ornate Shrew,Sorex ornatus,#N/A,89,29,6,"1,2,3,4,5",,,,,,,,,,No
 Flowers,True Lilies,Cream Fawn Lily,Erythronium citrinum,#N/A,89,0,4,3,5,,KR,,CaR,,,,,No
 Flowers,Monkeyflowers,Field Monkey-Flower,Erythranthe arvensis,#N/A,88,31,5,6,4,,NCoR,,,,,,,No
 Butterflies,True Metalmarks,Wright's Metalmark,Calephelis wrighti,2023-11-25,368,0,,,,,,,,,,,,No
-Birds,Water & Shorebirds,Least Storm-Petrel,Hydrobates microsoma,#N/A,88,4,"7,8,9,10",,,,SCo,,,,,,,No
+Birds,Water & Shorebirds,Least Storm-Petrel,Hydrobates microsoma,#N/A,88,4,"7,8,9,10",,,,SCo,,CCo,,,,,No
 Mammals,Mice & Rats,California Mouse,Peromyscus californicus,#N/A,87,37,4,5,3,,SCoR,,,,,,,No
 Flowers,Monkeyflowers,Little Purple Monkeyflower,Erythranthe purpurea,#N/A,87,0,5,6,,,DMtns,,TR,,,,,No
 Moths,Emperor Moths,Glover's Silkmoth,Hyalophora gloveri,#N/A,87,0,5,6,4,,SNH,,SNE,,,,,No
@@ -1104,7 +1104,6 @@ Flowers,Orchids,Centipede Grass Orchid,Zeuxine strateumatica,#N/A,17,0,,,,,SCo,,
 Moths,Sphinx Moths,Blinded Sphinx,Paonias excaecata,#N/A,16,4,"6,7",,,,NCoR,,,,,,,No
 Butterflies,Spread-wing Skippers,MacNeill's Sootywing,Hesperopsis gracielae,#N/A,16,0,,,,,DSon,,,,,,,No
 Birds,Other Birds,Gila Woodpecker,Melanerpes uropygialis,2023-05-04,128,0,1,"2,11,12",,,DSon,,,,,,,No
-Flowers,Trilliums,Smallflower Deathcamas,Toxicoscordion micranthum,#N/A,15,3,5,,,,,,,,,,,No
 Butterflies,Hairstreaks,Hoary Elfin,Callophrys polios,#N/A,15,0,4,,,Crescent City,NCo,,,,,,,No
 Dragonflies,Skimmers,Great Pondhawk,Erythemis vesiculosa,#N/A,15,0,,,,,SCo,,,,,,,No
 Frogs & Toads,Tree Frogs & Allies,Cuban Tree Frog,Osteopilus septentrionalis,#N/A,14,3,,,,,SCo,,,,,,,No
@@ -1163,3 +1162,30 @@ Flowers,Clarkia,Merced Clarkia,Clarkia lingulata,#N/A,10,0,,,,,SNF,,,,,,,No
 Flowers,Monkeyflowers,Egg Lake Monkeyflower,Diplacus pygmaeus,#N/A,10,0,,,,,CaR,,,,,,,No
 Lizards,Glass & Alligator Lizards,Panamint Alligator Lizard,Elgaria panamintina,#N/A,10,0,,,,,SNE,,,,,,,No
 Birds,Raptors,Harris's Hawk,Parabuteo unicinctus,#N/A,214,0,"1,2",3,12,"Ramona, Shelter Valley, Jacumba Hot Springs",PR,,,,,,,
+Flowers,Poppies,California Poppy,Eschscholzia californica,2023-08-16,59825,31322,,,,,,,,,,,,
+Flowers,Poppies,Bush Poppy,Dendromecon rigida,#N/A,11795,3332,4,3,5,,SCoR,,SNF,,CaR,,,
+Flowers,Poppies,Creamcups,Platystemon californicus,2026-03-14,8182,3429,,,,,,,,,,,,
+Flowers,Poppies,Little Gold Poppy,Eschscholzia minutiflora,#N/A,3763,0,3,2,4,,DSon,,SNE,,,,,
+Flowers,Poppies,Coulter's Matilija Poppy,Romneya coulteri,#N/A,2799,5,5,4,6,,SCo,,CCo,,,,,
+Flowers,Poppies,Goldpoppy,Eschscholzia parishii,#N/A,2726,0,3,2,4,,DSon,,,,,,,
+Flowers,Poppies,Tufted Poppy,Eschscholzia caespitosa,#N/A,2551,371,4,3,5,,SNF,,TR,,SCoR,,,
+Flowers,Poppies,Wind Poppy,Papaver heterophyllum,2026-05-30,2544,1654,,,,,,,,,,,,
+Flowers,Poppies,Flatbud Prickly Poppy,Argemone munita,#N/A,2478,12,6,5,7,,SNH,,SNE,,TR,,,
+Flowers,Poppies,Frying Pans,Eschscholzia lobbii,2026-03-08,1133,242,,,,,,,,,,,,
+Flowers,Poppies,Fire Poppy,Papaver californicum,#N/A,701,73,4,5,,"Mt Diablo, Serra Village",SCo,,SCoR,,,,,
+Flowers,Poppies,Cryptic Desert Poppy,Eschscholzia papastillii,#N/A,691,0,2,3,4,,DSon,,,,,,,
+Flowers,Poppies,Hairy Matilija Poppy,Romneya trichocalyx,#N/A,629,0,5,4,6,,SCo,,TR,,SCoR,,,
+Flowers,Poppies,Mojave Poppy,Eschscholzia glyptosperma,#N/A,481,0,3,4,2,,DMoj,,,,,,,
+Flowers,Poppies,Joshua Tree Poppy,Eschscholzia androuxii,#N/A,422,0,4,3,,,DSon,,,,,,,
+Flowers,Poppies,Narrowleaf Queen Poppy,Hesperomecon linearis,#N/A,390,18,4,3,5,Pinnacles,SCoR,,,,,,,
+Flowers,Poppies,Island Poppy,Eschscholzia ramosa,#N/A,279,0,4,3,,,ChI,,,,,,,
+Flowers,Poppies,Channel Islands Tree Poppy,Dendromecon harfordii,#N/A,264,0,4,3,5,,ChI,,TR,,,,,
+Flowers,Poppies,Lemmon's Poppy,Eschscholzia lemmonii,#N/A,230,0,4,3,,,SCoR,,,,,,,
+Flowers,Poppies,White Pygmy-Poppy,Canbya candida,#N/A,150,0,4,,,,SNH,,SNF,,TR,,,
+Flowers,Poppies,Smallflower Fairypoppy,Meconella denticulata,#N/A,142,0,4,3,5,,TR,,PR,,SCoR,,,
+Flowers,Poppies,White Bear Poppy,Arctomecon merriamii,#N/A,132,0,4,3,5,,SNE,,DMtns,,,,,
+Flowers,Poppies,San Benito Poppy,Eschscholzia hypecoides,#N/A,108,43,2,3,4,Pinnacles,SCoR,,,,,,,
+Flowers,Poppies,California Fairy Poppy,Meconella californica,#N/A,80,44,3,,,,SNF,,,,,,,
+Flowers,Poppies,Mojave Prickly Poppy,Argemone corymbosa,#N/A,77,0,4,3,5,,SNE,,DMtns,,TR,,,
+Flowers,Poppies,Diamond-petaled California Poppy,Eschscholzia rhombipetala,#N/A,32,23,4,3,5,"Mt Diablo, Carrizo Plain",SCoR,,,,,,,
+Flowers,Poppies,Oregon Fairypoppy,Meconella oregana,#N/A,22,16,4,,,,,,,,,,,
